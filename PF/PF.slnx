@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="PFCursus/PFCursus.csproj" />
+  <Project Path="PFOefeningen/PFOefeningen.csproj" Id="277aebe7-eb3a-4591-8205-00b838274abb" />
 </Solution>
