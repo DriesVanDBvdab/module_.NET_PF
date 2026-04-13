@@ -74,13 +74,36 @@
 //Console.WriteLine($"De korting op een aankoop van {aankoopBedrag} is {korting} euro.");
 
 // Oefening 14.6.2 Schrikkeljaar
-Console.Write("Geef een jaartal in:");
-int jaartal = int.Parse(Console.ReadLine() ?? string.Empty);
-if (jaartal % 4 == 0 && jaartal % 100 != 0 && jaartal % 400 != 0)
+//Console.Write("Geef een jaartal in:");
+//int jaartal = int.Parse(Console.ReadLine() ?? string.Empty);
+//if (jaartal % 4 == 0 && jaartal % 100 != 0 && jaartal % 400 != 0)
+//{
+//    Console.WriteLine($"{jaartal} is een schrikkeljaar.");
+//}
+//else
+//{
+//    Console.WriteLine($"{jaartal} is geen schrikkeljaar.");
+//}
+
+// Oefening 14.6.3 Lichtkrant
+Console.Write("Geef een datum in:");
+DateOnly ingegevenDatum = DateOnly.Parse(Console.ReadLine() ?? string.Empty);
+switch(ingegevenDatum.DayOfWeek)
 {
-    Console.WriteLine($"{jaartal} is een schrikkeljaar.");
-}
-else
-{
-    Console.WriteLine($"{jaartal} is geen schrikkeljaar.");
+    case DayOfWeek.Monday:
+    case DayOfWeek.Tuesday:
+    case DayOfWeek.Wednesday:
+    case DayOfWeek.Thursday:
+    case DayOfWeek.Friday:
+        Console.WriteLine("Openingsuren: 9u00 tot 12-00 en van 13u00 tot 18u00");
+        Console.WriteLine("We wensen u een prettige werkdag!");
+        break;
+    case DayOfWeek.Saturday:
+        Console.WriteLine("Openingsuren: 10u00 tot 12-00");
+        Console.WriteLine("We wensen u een fijn weekend!");
+        break;
+    case DayOfWeek.Sunday:
+        Console.WriteLine("Openingsuren: Gesloten");
+        Console.WriteLine("We wensen u een fijn weekend!");
+        break;
 }
