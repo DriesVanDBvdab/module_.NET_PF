@@ -145,22 +145,57 @@
 //Console.WriteLine($"Gemiddelde: {gemiddelde}");
 
 // Oefening 15.3.2 Priemgetal
-Console.Write("Geef een getal in:");
-int getal = int.Parse(Console.ReadLine() ?? string.Empty);
-int aantalDelers = 0;
-Console.WriteLine($"Delers van {getal}:");
-for (int i = 0; i < getal; i++) {     
-    if (getal % (i + 1) == 0)
+//Console.Write("Geef een getal in:");
+//int getal = int.Parse(Console.ReadLine() ?? string.Empty);
+//int aantalDelers = 0;
+//Console.WriteLine($"Delers van {getal}:");
+//for (int i = 0; i < getal; i++) {     
+//    if (getal % (i + 1) == 0)
+//    {
+//        aantalDelers++;
+//    }
+//    Console.WriteLine($"Deler {i}: {i + 1}");
+//}
+//if(aantalDelers == 2)
+//{
+//    Console.WriteLine($"{getal} is een priemgetal.");
+//}
+//else
+//{
+//    Console.WriteLine($"{getal} is geen priemgetal.");
+//}
+
+// Oefening 15.3.3 IBAN rekeningnummer generator
+//TODO
+using System.Text;
+using System.Text.RegularExpressions;
+
+string landCode = "BE";
+
+Console.Write("Geef u belgish rekeningnummer: ");
+string belgishRekeningNummer = Console.ReadLine() ?? string.Empty;
+
+
+StringBuilder rekeningZTekens = new StringBuilder(Regex.Replace(belgishRekeningNummer, @"[^-9]", ""));
+while (true)
+{
+    if (rekeningZTekens.Length == 12)
     {
-        aantalDelers++;
+        break;
     }
-    Console.WriteLine($"Deler {i}: {i + 1}");
+    Console.WriteLine($"Ongeldig rekeningnummer. Probeer opnieuw. {rekeningZTekens.Length} {rekeningZTekens}");
+    belgishRekeningNummer = Console.ReadLine() ?? string.Empty;
+    rekeningZTekens = new StringBuilder(Regex.Replace(belgishRekeningNummer, @"[^-9]", ""));
 }
-if(aantalDelers == 2)
+rekeningZTekens.Append("BE00");
+string rekeningZTekensString = rekeningZTekens.ToString();
+foreach (char c in rekeningZTekensString)
 {
-    Console.WriteLine($"{getal} is een priemgetal.");
-}
-else
-{
-    Console.WriteLine($"{getal} is geen priemgetal.");
+    if (char.IsLetter(c))
+    {
+        char upperChar = char.ToUpper(c);
+        int alphabetPosition = upperChar - 'A';
+        int value = alphabetPosition + 9;
+        Console.WriteLine(value);
+    }
 }
