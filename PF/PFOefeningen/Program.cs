@@ -86,24 +86,60 @@
 //}
 
 // Oefening 14.6.3 Lichtkrant
-Console.Write("Geef een datum in:");
-DateOnly ingegevenDatum = DateOnly.Parse(Console.ReadLine() ?? string.Empty);
-switch(ingegevenDatum.DayOfWeek)
+//Console.Write("Geef een datum in:");
+//DateOnly ingegevenDatum = DateOnly.Parse(Console.ReadLine() ?? string.Empty);
+//switch(ingegevenDatum.DayOfWeek)
+//{
+//    case DayOfWeek.Monday:
+//    case DayOfWeek.Tuesday:
+//    case DayOfWeek.Wednesday:
+//    case DayOfWeek.Thursday:
+//    case DayOfWeek.Friday:
+//        Console.WriteLine("Openingsuren: 9u00 tot 12-00 en van 13u00 tot 18u00");
+//        Console.WriteLine("We wensen u een prettige werkdag!");
+//        break;
+//    case DayOfWeek.Saturday:
+//        Console.WriteLine("Openingsuren: 10u00 tot 12-00");
+//        Console.WriteLine("We wensen u een fijn weekend!");
+//        break;
+//    case DayOfWeek.Sunday:
+//        Console.WriteLine("Openingsuren: Gesloten");
+//        Console.WriteLine("We wensen u een fijn weekend!");
+//        break;
+//}
+
+// Oefening 15.3.1 Kleinste, grootste en gemiddelde.
+int[] getallen = new int[0];
+Console.WriteLine("Geef een reeks getallen in. Typ '-1' om te stoppen.");
+int getal = 0;
+while (true)
 {
-    case DayOfWeek.Monday:
-    case DayOfWeek.Tuesday:
-    case DayOfWeek.Wednesday:
-    case DayOfWeek.Thursday:
-    case DayOfWeek.Friday:
-        Console.WriteLine("Openingsuren: 9u00 tot 12-00 en van 13u00 tot 18u00");
-        Console.WriteLine("We wensen u een prettige werkdag!");
+    getal = int.Parse(Console.ReadLine() ?? string.Empty);
+    if(getal == -1)
+    {
         break;
-    case DayOfWeek.Saturday:
-        Console.WriteLine("Openingsuren: 10u00 tot 12-00");
-        Console.WriteLine("We wensen u een fijn weekend!");
-        break;
-    case DayOfWeek.Sunday:
-        Console.WriteLine("Openingsuren: Gesloten");
-        Console.WriteLine("We wensen u een fijn weekend!");
-        break;
+    }
+    Array.Resize(ref getallen, getallen.Length + 1);
+    getallen[getallen.Length - 1] = getal;
 }
+
+int kleinste = getallen[0];
+int grootste = getallen[0];
+int gemiddelde = getallen[0];
+for (int i = 1; i < getallen.Length; i++)
+{
+    if (getallen[i] < kleinste)
+    {
+        kleinste = getallen[i];
+    }
+    if (getallen[i] > grootste)
+    {
+        grootste = getallen[i];
+    }
+    
+    gemiddelde += getallen[i];
+}
+gemiddelde /= getallen.Length;
+Console.WriteLine($"Kleinste getal: {kleinste}");
+Console.WriteLine($"Grootste getal: {grootste}");
+Console.WriteLine($"Gemiddelde: {gemiddelde}");
