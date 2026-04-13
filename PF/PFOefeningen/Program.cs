@@ -109,37 +109,58 @@
 //}
 
 // Oefening 15.3.1 Kleinste, grootste en gemiddelde.
-int[] getallen = new int[0];
-Console.WriteLine("Geef een reeks getallen in. Typ '-1' om te stoppen.");
-int getal = 0;
-while (true)
-{
-    getal = int.Parse(Console.ReadLine() ?? string.Empty);
-    if(getal == -1)
-    {
-        break;
-    }
-    Array.Resize(ref getallen, getallen.Length + 1);
-    getallen[getallen.Length - 1] = getal;
-}
+//int[] getallen = new int[0];
+//Console.WriteLine("Geef een reeks getallen in. Typ '-1' om te stoppen.");
+//int getal = 0;
+//while (true)
+//{
+//    getal = int.Parse(Console.ReadLine() ?? string.Empty);
+//    if(getal == -1)
+//    {
+//        break;
+//    }
+//    Array.Resize(ref getallen, getallen.Length + 1);
+//    getallen[getallen.Length - 1] = getal;
+//}
 
-int kleinste = getallen[0];
-int grootste = getallen[0];
-int gemiddelde = getallen[0];
-for (int i = 1; i < getallen.Length; i++)
-{
-    if (getallen[i] < kleinste)
+//int kleinste = getallen[0];
+//int grootste = getallen[0];
+//int gemiddelde = getallen[0];
+//for (int i = 1; i < getallen.Length; i++)
+//{
+//    if (getallen[i] < kleinste)
+//    {
+//        kleinste = getallen[i];
+//    }
+//    if (getallen[i] > grootste)
+//    {
+//        grootste = getallen[i];
+//    }
+
+//    gemiddelde += getallen[i];
+//}
+//gemiddelde /= getallen.Length;
+//Console.WriteLine($"Kleinste getal: {kleinste}");
+//Console.WriteLine($"Grootste getal: {grootste}");
+//Console.WriteLine($"Gemiddelde: {gemiddelde}");
+
+// Oefening 15.3.2 Priemgetal
+Console.Write("Geef een getal in:");
+int getal = int.Parse(Console.ReadLine() ?? string.Empty);
+int aantalDelers = 0;
+Console.WriteLine($"Delers van {getal}:");
+for (int i = 0; i < getal; i++) {     
+    if (getal % (i + 1) == 0)
     {
-        kleinste = getallen[i];
+        aantalDelers++;
     }
-    if (getallen[i] > grootste)
-    {
-        grootste = getallen[i];
-    }
-    
-    gemiddelde += getallen[i];
+    Console.WriteLine($"Deler {i}: {i + 1}");
 }
-gemiddelde /= getallen.Length;
-Console.WriteLine($"Kleinste getal: {kleinste}");
-Console.WriteLine($"Grootste getal: {grootste}");
-Console.WriteLine($"Gemiddelde: {gemiddelde}");
+if(aantalDelers == 2)
+{
+    Console.WriteLine($"{getal} is een priemgetal.");
+}
+else
+{
+    Console.WriteLine($"{getal} is geen priemgetal.");
+}
