@@ -32,21 +32,43 @@
 //    $"{aantal1CentStukkenKitKat}x1cents");
 
 // oefening 12.12 Strings
-using System.Text;
+//using System.Text;
 
-Console.WriteLine("Geef de volgende gegevens in voor u wachtwoord:");
-Console.Write("AcherNaam: ");
-string familieNaam = Console.ReadLine() ?? string.Empty;
-Console.Write("Zonenummer: ");
-string zoneNummer = Console.ReadLine() ?? string.Empty;
-Console.Write("Postcode: ");
-string postcode = Console.ReadLine() ?? string.Empty;
+//Console.WriteLine("Geef de volgende gegevens in voor u wachtwoord:");
+//Console.Write("AcherNaam: ");
+//string familieNaam = Console.ReadLine() ?? string.Empty;
+//Console.Write("Zonenummer: ");
+//string zoneNummer = Console.ReadLine() ?? string.Empty;
+//Console.Write("Postcode: ");
+//string postcode = Console.ReadLine() ?? string.Empty;
 
-StringBuilder wachtwoord = new StringBuilder(familieNaam.Substring(1, 1).ToLower());
-wachtwoord.Append(familieNaam.Substring(0, 1).ToUpper());
-wachtwoord.Append(zoneNummer.Remove(0,1));
-int postcodeKwadraat = int.Parse(postcode.Substring(3,1)) * int.Parse(postcode.Substring(3, 1));
-wachtwoord.Append(postcodeKwadraat.ToString());
-wachtwoord.Insert(3, "*");
+//StringBuilder wachtwoord = new StringBuilder(familieNaam.Substring(1, 1).ToLower());
+//wachtwoord.Append(familieNaam.Substring(0, 1).ToUpper());
+//wachtwoord.Append(zoneNummer.Remove(0,1));
+//int postcodeKwadraat = int.Parse(postcode.Substring(3,1)) * int.Parse(postcode.Substring(3, 1));
+//wachtwoord.Append(postcodeKwadraat.ToString());
+//wachtwoord.Insert(3, "*");
 
-Console.WriteLine($"Uw wachtwoord is: ({wachtwoord})");
+//Console.WriteLine($"Uw wachtwoord is: ({wachtwoord})");
+
+// Oefening 14.6.1 Kortingsbon
+Console.Write("Geef het aankoop bedrag in:");
+string aankoopBedragInput = Console.ReadLine() ?? string.Empty;
+int aankoopBedrag = int.Parse(aankoopBedragInput);
+float korting = 0.0f;
+switch (aankoopBedrag)
+{
+    case < 25:
+        korting = aankoopBedrag * 0.01f;
+        break;
+    case >= 25 and < 50:
+        korting = aankoopBedrag * 0.02f;
+        break;
+    case >= 50 and < 100:
+        korting = aankoopBedrag * 0.03f;
+        break;
+    case >= 100:
+        korting = aankoopBedrag * 0.05f;
+        break;
+}
+Console.WriteLine($"De korting op een aankoop van {aankoopBedrag} is {korting} euro.");

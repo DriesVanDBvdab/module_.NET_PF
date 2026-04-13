@@ -147,3 +147,6 @@
 //DateTime tijd = DateTime.UtcNow;
 //Console.WriteLine("{0,30}", tijd);
 
+//TekenLijn();
+//TekenLijn();
+//void TekenLijn() { Console.WriteLine("----------------"); }
