@@ -52,23 +52,35 @@
 //Console.WriteLine($"Uw wachtwoord is: ({wachtwoord})");
 
 // Oefening 14.6.1 Kortingsbon
-Console.Write("Geef het aankoop bedrag in:");
-string aankoopBedragInput = Console.ReadLine() ?? string.Empty;
-int aankoopBedrag = int.Parse(aankoopBedragInput);
-float korting = 0.0f;
-switch (aankoopBedrag)
+//Console.Write("Geef het aankoop bedrag in:");
+//string aankoopBedragInput = Console.ReadLine() ?? string.Empty;
+//int aankoopBedrag = int.Parse(aankoopBedragInput);
+//float korting = 0.0f;
+//switch (aankoopBedrag)
+//{
+//    case < 25:
+//        korting = aankoopBedrag * 0.01f;
+//        break;
+//    case >= 25 and < 50:
+//        korting = aankoopBedrag * 0.02f;
+//        break;
+//    case >= 50 and < 100:
+//        korting = aankoopBedrag * 0.03f;
+//        break;
+//    case >= 100:
+//        korting = aankoopBedrag * 0.05f;
+//        break;
+//}
+//Console.WriteLine($"De korting op een aankoop van {aankoopBedrag} is {korting} euro.");
+
+// Oefening 14.6.2 Schrikkeljaar
+Console.Write("Geef een jaartal in:");
+int jaartal = int.Parse(Console.ReadLine() ?? string.Empty);
+if (jaartal % 4 == 0 && jaartal % 100 != 0 && jaartal % 400 != 0)
 {
-    case < 25:
-        korting = aankoopBedrag * 0.01f;
-        break;
-    case >= 25 and < 50:
-        korting = aankoopBedrag * 0.02f;
-        break;
-    case >= 50 and < 100:
-        korting = aankoopBedrag * 0.03f;
-        break;
-    case >= 100:
-        korting = aankoopBedrag * 0.05f;
-        break;
+    Console.WriteLine($"{jaartal} is een schrikkeljaar.");
 }
-Console.WriteLine($"De korting op een aankoop van {aankoopBedrag} is {korting} euro.");
+else
+{
+    Console.WriteLine($"{jaartal} is geen schrikkeljaar.");
+}
