@@ -243,25 +243,125 @@
 //}
 
 // Oefening 17.8.1 Som van rijen en kolommen
-int[,] grid = new int[11,11];
-Random randomGenerator = new Random();
-int totaal = 0;
-for (int i = 0; i < grid.GetLength(0); i++)
+//int[,] grid = new int[11,11];
+//Random randomGenerator = new Random();
+//int totaal = 0;
+//for (int i = 0; i < grid.GetLength(0); i++)
+//{
+//    for (int j = 0; j < grid.GetLength(1); j++)
+//    {
+//        if (i < 10)
+//        {
+//            int vak = randomGenerator.Next(0, 99);
+//            grid[i, j] = vak;
+//            totaal += vak;
+//        }
+//        else if (i == 10)
+//        {
+//            grid[i, j] = totaal;
+//        }
+//    }
+//}
+
+// Oefening 17.8.2 Codeerprogramma
+Console.WriteLine("Voer een text in om te coderen:");
+string text = Console.ReadLine() ?? string.Empty;
+string codedText = "";
+for (int i = 0; i < text.Length; i++)
 {
-    for (int j = 0; j < grid.GetLength(1); j++)
+    char c = text[i];
+    if (char.IsLetter(c))
     {
-        if (i < 10)
+        char upperChar = char.ToUpper(c);
+        switch (upperChar)
         {
-            int vak = randomGenerator.Next(0, 99);
-            grid[i, j] = vak;
-            totaal += vak;
+            case 'A':
+                Console.Write("X");
+                codedText += "Q";
+                continue;
+            case 'B':
+                codedText += "S";
+                continue;
+            case 'C':
+                codedText += "P";
+                continue;
+            case 'D':
+                codedText += "A";
+                continue;
+            case 'E':
+                codedText += "T";
+                continue;
+            case 'F':
+                codedText += "V";
+                continue;
+            case 'G':
+                codedText += "X";
+                continue;
+            case 'H':
+                codedText += "B";
+                continue;
+            case 'I':
+                codedText += "C";
+                continue;
+            case 'J':
+                codedText += "R";
+                continue;
+            case 'K':
+                codedText += "J";
+                continue;
+            case 'L':
+                codedText += "Y";
+                continue;
+            case 'M':
+                codedText += "E";
+                continue;
+            case 'N':
+                codedText += "D";
+                continue;
+            case 'O':
+                codedText += "U";
+                continue;
+            case 'P':
+                codedText += "O";
+                continue;
+            case 'Q':
+                codedText += "H";
+                continue;
+            case 'R':
+                codedText += "Z";
+                continue;
+            case 'S':
+                codedText += "G";
+                continue;
+            case 'T':
+                codedText += "I";
+                continue;
+            case 'U':
+                codedText += "F";
+                continue;
+            case 'V':
+                codedText += "L";
+                continue;
+            case 'W':
+                codedText += "N";
+                continue;
+            case 'X':
+                codedText += "W";
+                continue;
+            case 'Y':
+                codedText += "K";
+                continue;
+            case 'Z':
+                codedText += "M";
+                continue;
         }
-        else if (i == 10)
-        {
-            grid[i, j] = totaal;
-        }
+
+                
         
-
     }
-
+    else
+    {
+        codedText += c;
+    }
 }
+Console.WriteLine(codedText);
