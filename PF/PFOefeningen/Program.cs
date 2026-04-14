@@ -166,27 +166,57 @@
 //}
 
 // Oefening 15.3.3 IBAN rekeningnummer generator
+//using System.Numerics;
+//using System.Text;
+//using System.Text.RegularExpressions;
+
+//string landCode = "BE";
+
+//Console.Write("Geef u belgish rekeningnummer: ");
+//string belgishRekeningNummer = Console.ReadLine() ?? string.Empty;
+//string rekening = new string(belgishRekeningNummer.Where(char.IsDigit).ToArray());
+
+//while (true)
+//{
+//    if (rekening.Length == 12)
+//    {
+//        break;
+//    }
+//    Console.WriteLine($"Ongeldig rekeningnummer. Probeer opnieuw. {rekening.Length} {rekening}");
+//    belgishRekeningNummer = Console.ReadLine() ?? string.Empty;
+//    rekening = new string(belgishRekeningNummer.Where(char.IsDigit).ToArray());
+//}
+//string rekeningLandcode = rekening + landCode + "00";
+//string rekeningLandcodeNumeriek = "";
+//foreach (char c in rekeningLandcode)
+//{
+//    if (char.IsLetter(c))
+//    {
+//        char upperChar = char.ToUpper(c);
+//        int alphabetPosition = upperChar - 'A' + 1;
+//        int value = alphabetPosition + 9;
+//        Console.WriteLine(value);
+//        rekeningLandcodeNumeriek += value.ToString();
+//    }
+//    else
+//    {
+//        rekeningLandcodeNumeriek += c;
+//    }
+//}
+//Console.WriteLine(rekeningLandcodeNumeriek);
+//BigInteger rekeningGetal = BigInteger.Parse(rekeningLandcodeNumeriek);
+//int rest = (int)(rekeningGetal % 97);
+//int controleGetal = 98 - rest;
+//string IBAN = landCode + controleGetal.ToString("D2") + rekening;
+//Console.WriteLine($"Het IBAN nummer is: {IBAN}");
+
+// Oefening 15.3.4 Controle IBAN rekeningnummer
 using System.Numerics;
-using System.Text;
-using System.Text.RegularExpressions;
 
-string landCode = "BE";
-
-Console.Write("Geef u belgish rekeningnummer: ");
-string belgishRekeningNummer = Console.ReadLine() ?? string.Empty;
-string rekening = new string(belgishRekeningNummer.Where(char.IsDigit).ToArray());
-
-while (true)
-{
-    if (rekening.Length == 12)
-    {
-        break;
-    }
-    Console.WriteLine($"Ongeldig rekeningnummer. Probeer opnieuw. {rekening.Length} {rekening}");
-    belgishRekeningNummer = Console.ReadLine() ?? string.Empty;
-    rekening = new string(belgishRekeningNummer.Where(char.IsDigit).ToArray());
-}
-string rekeningLandcode = rekening + landCode + "00";
+Console.WriteLine("IBAN controle oefening");
+const string IBAN = "BE68 5390 0754 7034";
+string IBANzonderSpaties = new string(IBAN.Where(c => !char.IsWhiteSpace(c)).ToArray());
+string rekeningLandcode = IBANzonderSpaties.Substring(4) + IBANzonderSpaties.Substring(0, 4);
 string rekeningLandcodeNumeriek = "";
 foreach (char c in rekeningLandcode)
 {
@@ -195,7 +225,6 @@ foreach (char c in rekeningLandcode)
         char upperChar = char.ToUpper(c);
         int alphabetPosition = upperChar - 'A' + 1;
         int value = alphabetPosition + 9;
-        Console.WriteLine(value);
         rekeningLandcodeNumeriek += value.ToString();
     }
     else
@@ -203,9 +232,12 @@ foreach (char c in rekeningLandcode)
         rekeningLandcodeNumeriek += c;
     }
 }
-Console.WriteLine(rekeningLandcodeNumeriek);
 BigInteger rekeningGetal = BigInteger.Parse(rekeningLandcodeNumeriek);
 int rest = (int)(rekeningGetal % 97);
-int controleGetal = 98 - rest;
-string IBAN = landCode + controleGetal.ToString("D2") + rekening;
-Console.WriteLine($"Het IBAN nummer is: {IBAN}");
+if(rest == 1) { 
+    Console.WriteLine($"Het IBAN nummer {IBAN} is geldig.");
+}
+else
+{
+    Console.WriteLine($"Het IBAN nummer {IBAN} is ongeldig.");
+}
