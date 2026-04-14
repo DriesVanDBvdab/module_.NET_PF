@@ -211,33 +211,57 @@
 //Console.WriteLine($"Het IBAN nummer is: {IBAN}");
 
 // Oefening 15.3.4 Controle IBAN rekeningnummer
-using System.Numerics;
+//using System.Numerics;
 
-Console.WriteLine("IBAN controle oefening");
-const string IBAN = "BE68 5390 0754 7034";
-string IBANzonderSpaties = new string(IBAN.Where(c => !char.IsWhiteSpace(c)).ToArray());
-string rekeningLandcode = IBANzonderSpaties.Substring(4) + IBANzonderSpaties.Substring(0, 4);
-string rekeningLandcodeNumeriek = "";
-foreach (char c in rekeningLandcode)
+//Console.WriteLine("IBAN controle oefening");
+//const string IBAN = "BE68 5390 0754 7034";
+//string IBANzonderSpaties = new string(IBAN.Where(c => !char.IsWhiteSpace(c)).ToArray());
+//string rekeningLandcode = IBANzonderSpaties.Substring(4) + IBANzonderSpaties.Substring(0, 4);
+//string rekeningLandcodeNumeriek = "";
+//foreach (char c in rekeningLandcode)
+//{
+//    if (char.IsLetter(c))
+//    {
+//        char upperChar = char.ToUpper(c);
+//        int alphabetPosition = upperChar - 'A' + 1;
+//        int value = alphabetPosition + 9;
+//        rekeningLandcodeNumeriek += value.ToString();
+//    }
+//    else
+//    {
+//        rekeningLandcodeNumeriek += c;
+//    }
+//}
+//BigInteger rekeningGetal = BigInteger.Parse(rekeningLandcodeNumeriek);
+//int rest = (int)(rekeningGetal % 97);
+//if(rest == 1) { 
+//    Console.WriteLine($"Het IBAN nummer {IBAN} is geldig.");
+//}
+//else
+//{
+//    Console.WriteLine($"Het IBAN nummer {IBAN} is ongeldig.");
+//}
+
+// Oefening 17.8.1 Som van rijen en kolommen
+int[,] grid = new int[11,11];
+Random randomGenerator = new Random();
+int totaal = 0;
+for (int i = 0; i < grid.GetLength(0); i++)
 {
-    if (char.IsLetter(c))
+    for (int j = 0; j < grid.GetLength(1); j++)
     {
-        char upperChar = char.ToUpper(c);
-        int alphabetPosition = upperChar - 'A' + 1;
-        int value = alphabetPosition + 9;
-        rekeningLandcodeNumeriek += value.ToString();
+        if (i < 10)
+        {
+            int vak = randomGenerator.Next(0, 99);
+            grid[i, j] = vak;
+            totaal += vak;
+        }
+        else if (i == 10)
+        {
+            grid[i, j] = totaal;
+        }
+        
+
     }
-    else
-    {
-        rekeningLandcodeNumeriek += c;
-    }
-}
-BigInteger rekeningGetal = BigInteger.Parse(rekeningLandcodeNumeriek);
-int rest = (int)(rekeningGetal % 97);
-if(rest == 1) { 
-    Console.WriteLine($"Het IBAN nummer {IBAN} is geldig.");
-}
-else
-{
-    Console.WriteLine($"Het IBAN nummer {IBAN} is ongeldig.");
+
 }
