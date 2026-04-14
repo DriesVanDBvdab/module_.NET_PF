@@ -166,7 +166,7 @@
 //}
 
 // Oefening 15.3.3 IBAN rekeningnummer generator
-//TODO
+using System.Numerics;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -174,28 +174,38 @@ string landCode = "BE";
 
 Console.Write("Geef u belgish rekeningnummer: ");
 string belgishRekeningNummer = Console.ReadLine() ?? string.Empty;
+string rekening = new string(belgishRekeningNummer.Where(char.IsDigit).ToArray());
 
-
-StringBuilder rekeningZTekens = new StringBuilder(Regex.Replace(belgishRekeningNummer, @"[^-9]", ""));
 while (true)
 {
-    if (rekeningZTekens.Length == 12)
+    if (rekening.Length == 12)
     {
         break;
     }
-    Console.WriteLine($"Ongeldig rekeningnummer. Probeer opnieuw. {rekeningZTekens.Length} {rekeningZTekens}");
+    Console.WriteLine($"Ongeldig rekeningnummer. Probeer opnieuw. {rekening.Length} {rekening}");
     belgishRekeningNummer = Console.ReadLine() ?? string.Empty;
-    rekeningZTekens = new StringBuilder(Regex.Replace(belgishRekeningNummer, @"[^-9]", ""));
+    rekening = new string(belgishRekeningNummer.Where(char.IsDigit).ToArray());
 }
-rekeningZTekens.Append("BE00");
-string rekeningZTekensString = rekeningZTekens.ToString();
-foreach (char c in rekeningZTekensString)
+string rekeningLandcode = rekening + landCode + "00";
+string rekeningLandcodeNumeriek = "";
+foreach (char c in rekeningLandcode)
 {
     if (char.IsLetter(c))
     {
         char upperChar = char.ToUpper(c);
-        int alphabetPosition = upperChar - 'A';
+        int alphabetPosition = upperChar - 'A' + 1;
         int value = alphabetPosition + 9;
         Console.WriteLine(value);
+        rekeningLandcodeNumeriek += value.ToString();
+    }
+    else
+    {
+        rekeningLandcodeNumeriek += c;
     }
 }
+Console.WriteLine(rekeningLandcodeNumeriek);
+BigInteger rekeningGetal = BigInteger.Parse(rekeningLandcodeNumeriek);
+int rest = (int)(rekeningGetal % 97);
+int controleGetal = 98 - rest;
+string IBAN = landCode + controleGetal.ToString("D2") + rekening;
+Console.WriteLine($"Het IBAN nummer is: {IBAN}");
