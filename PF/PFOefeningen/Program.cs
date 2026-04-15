@@ -368,18 +368,99 @@
 
 // Oefening 20.9.1 Bank
 
+//using PFOefeningen;
+
+//Rekening rekening = new Rekening();
+//rekening.RekeningNummer = "BE10234523451234";
+//rekening.Saldo = 1000;
+//rekening.CreatieDatum = new DateTime(2000, 1, 1);
+//Console.WriteLine($"Rekeningnummer: {rekening.RekeningNummer}");
+//Console.WriteLine($"Saldo: {rekening.Saldo}");
+//Console.WriteLine($"Creatiedatum: {rekening.CreatieDatum.ToLongDateString()}");
+//rekening.RekeningNummer = "FR10234523451234";
+//rekening.Saldo = 1000;
+//rekening.CreatieDatum = new DateTime(1890, 1, 1);
+//Console.WriteLine($"Rekeningnummer: {rekening.RekeningNummer}");
+//Console.WriteLine($"Saldo: {rekening.Saldo}");
+//Console.WriteLine($"Creatiedatum: {rekening.CreatieDatum.ToLongDateString()}");
+
+// Oefening 20.9.2 Voertuigen
 using PFOefeningen;
 
-Rekening rekening = new Rekening();
-rekening.RekeningNummer = "BE10234523451234";
-rekening.Saldo = 1000;
-rekening.CreatieDatum = new DateTime(2000, 1, 1);
-Console.WriteLine($"Rekeningnummer: {rekening.RekeningNummer}");
-Console.WriteLine($"Saldo: {rekening.Saldo}");
-Console.WriteLine($"Creatiedatum: {rekening.CreatieDatum.ToLongDateString()}");
-rekening.RekeningNummer = "FR10234523451234";
-rekening.Saldo = 1000;
-rekening.CreatieDatum = new DateTime(1890, 1, 1);
-Console.WriteLine($"Rekeningnummer: {rekening.RekeningNummer}");
-Console.WriteLine($"Saldo: {rekening.Saldo}");
-Console.WriteLine($"Creatiedatum: {rekening.CreatieDatum.ToLongDateString()}");
+Voertuig Toyota = new Voertuig();
+Toyota.Polishouder = "Jan Jansen";
+Toyota.Kostprijs = 12500m;
+Toyota.Pk = 95;
+Toyota.GemiddeldVerbruik = 6.5f;
+
+// Print direct onder de declaratie
+Console.WriteLine("Voertuig: Toyota");
+Console.WriteLine($"  Polishouder: {Toyota.Polishouder}");
+Console.WriteLine($"  Kostprijs: {Toyota.Kostprijs:C}");
+Console.WriteLine($"  PK: {Toyota.Pk}");
+Console.WriteLine($"  Gemiddeld verbruik: {Toyota.GemiddeldVerbruik} l/100km");
+Console.WriteLine($"  Nummerplaat: {Toyota.Nummerplaat}");
+Console.WriteLine();
+
+Voertuig Tesla = new Voertuig();
+Tesla.Polishouder = "Els Peeters";
+Tesla.Kostprijs = 35000m;
+Tesla.Pk = -12;
+Tesla.GemiddeldVerbruik = 0.0f;
+Tesla.Nummerplaat = "2-DEF-456";
+
+// Print direct onder de declaratie
+Console.WriteLine("Voertuig: Tesla");
+Console.WriteLine($"  Polishouder: {Tesla.Polishouder}");
+Console.WriteLine($"  Kostprijs: {Tesla.Kostprijs:C}");
+Console.WriteLine($"  PK: {Tesla.Pk}");
+Console.WriteLine($"  Gemiddeld verbruik: {Tesla.GemiddeldVerbruik} l/100km");
+Console.WriteLine($"  Nummerplaat: {Tesla.Nummerplaat}");
+Console.WriteLine();
+
+Voertuig Peugeot = new Voertuig();
+Peugeot.Polishouder = "Auto BV";
+Peugeot.Kostprijs = 4500m;
+Peugeot.Pk = 75;
+Peugeot.GemiddeldVerbruik = -5.5f;
+Peugeot.Nummerplaat = "XYZ-999";
+
+// Print direct onder de declaratie
+Console.WriteLine("Voertuig: Peugeot");
+Console.WriteLine($"  Polishouder: {Peugeot.Polishouder}");
+Console.WriteLine($"  Kostprijs: {Peugeot.Kostprijs:C}");
+Console.WriteLine($"  PK: {Peugeot.Pk}");
+Console.WriteLine($"  Gemiddeld verbruik: {Peugeot.GemiddeldVerbruik} l/100km");
+Console.WriteLine($"  Nummerplaat: {Peugeot.Nummerplaat}");
+Console.WriteLine();
+
+Voertuig Volvo = new Voertuig();
+Volvo.Polishouder = "Bert Autos";
+Volvo.Kostprijs = -30000m;
+Volvo.Pk = 150;
+Volvo.GemiddeldVerbruik = 7.2f;
+Volvo.Nummerplaat = "3-GHI-789";
+
+// Print direct onder de declaratie
+Console.WriteLine("Voertuig: Volvo");
+Console.WriteLine($"  Polishouder: {Volvo.Polishouder}");
+Console.WriteLine($"  Kostprijs: {Volvo.Kostprijs:C}");
+Console.WriteLine($"  PK: {Volvo.Pk}");
+Console.WriteLine($"  Gemiddeld verbruik: {Volvo.GemiddeldVerbruik} l/100km");
+Console.WriteLine($"  Nummerplaat: {Volvo.Nummerplaat}");
+Console.WriteLine();
+
+Voertuig Ford = new Voertuig();
+Ford.Kostprijs = 9800m;
+Ford.Pk = 110;
+Ford.GemiddeldVerbruik = 6.9f;
+Ford.Nummerplaat = "RND-123";
+
+// Print direct onder de declaratie
+Console.WriteLine("Voertuig: Ford");
+Console.WriteLine($"  Polishouder: {Ford.Polishouder}");
+Console.WriteLine($"  Kostprijs: {Ford.Kostprijs:C}");
+Console.WriteLine($"  PK: {Ford.Pk}");
+Console.WriteLine($"  Gemiddeld verbruik: {Ford.GemiddeldVerbruik} l/100km");
+Console.WriteLine($"  Nummerplaat: {Ford.Nummerplaat}");
+Console.WriteLine();
