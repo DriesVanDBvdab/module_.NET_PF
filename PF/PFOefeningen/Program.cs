@@ -264,104 +264,122 @@
 //}
 
 // Oefening 17.8.2 Codeerprogramma
-Console.WriteLine("Voer een text in om te coderen:");
-string text = Console.ReadLine() ?? string.Empty;
-string codedText = "";
-for (int i = 0; i < text.Length; i++)
-{
-    char c = text[i];
-    if (char.IsLetter(c))
-    {
-        char upperChar = char.ToUpper(c);
-        switch (upperChar)
-        {
-            case 'A':
-                Console.Write("X");
-                codedText += "Q";
-                continue;
-            case 'B':
-                codedText += "S";
-                continue;
-            case 'C':
-                codedText += "P";
-                continue;
-            case 'D':
-                codedText += "A";
-                continue;
-            case 'E':
-                codedText += "T";
-                continue;
-            case 'F':
-                codedText += "V";
-                continue;
-            case 'G':
-                codedText += "X";
-                continue;
-            case 'H':
-                codedText += "B";
-                continue;
-            case 'I':
-                codedText += "C";
-                continue;
-            case 'J':
-                codedText += "R";
-                continue;
-            case 'K':
-                codedText += "J";
-                continue;
-            case 'L':
-                codedText += "Y";
-                continue;
-            case 'M':
-                codedText += "E";
-                continue;
-            case 'N':
-                codedText += "D";
-                continue;
-            case 'O':
-                codedText += "U";
-                continue;
-            case 'P':
-                codedText += "O";
-                continue;
-            case 'Q':
-                codedText += "H";
-                continue;
-            case 'R':
-                codedText += "Z";
-                continue;
-            case 'S':
-                codedText += "G";
-                continue;
-            case 'T':
-                codedText += "I";
-                continue;
-            case 'U':
-                codedText += "F";
-                continue;
-            case 'V':
-                codedText += "L";
-                continue;
-            case 'W':
-                codedText += "N";
-                continue;
-            case 'X':
-                codedText += "W";
-                continue;
-            case 'Y':
-                codedText += "K";
-                continue;
-            case 'Z':
-                codedText += "M";
-                continue;
-        }
+//Console.WriteLine("Voer een text in om te coderen:");
+//string text = Console.ReadLine() ?? string.Empty;
+//string codedText = "";
+//for (int i = 0; i < text.Length; i++)
+//{
+//    char c = text[i];
+//    if (char.IsLetter(c))
+//    {
+//        char upperChar = char.ToUpper(c);
+//        switch (upperChar)
+//        {
+//            case 'A':
+//                Console.Write("X");
+//                codedText += "Q";
+//                continue;
+//            case 'B':
+//                codedText += "S";
+//                continue;
+//            case 'C':
+//                codedText += "P";
+//                continue;
+//            case 'D':
+//                codedText += "A";
+//                continue;
+//            case 'E':
+//                codedText += "T";
+//                continue;
+//            case 'F':
+//                codedText += "V";
+//                continue;
+//            case 'G':
+//                codedText += "X";
+//                continue;
+//            case 'H':
+//                codedText += "B";
+//                continue;
+//            case 'I':
+//                codedText += "C";
+//                continue;
+//            case 'J':
+//                codedText += "R";
+//                continue;
+//            case 'K':
+//                codedText += "J";
+//                continue;
+//            case 'L':
+//                codedText += "Y";
+//                continue;
+//            case 'M':
+//                codedText += "E";
+//                continue;
+//            case 'N':
+//                codedText += "D";
+//                continue;
+//            case 'O':
+//                codedText += "U";
+//                continue;
+//            case 'P':
+//                codedText += "O";
+//                continue;
+//            case 'Q':
+//                codedText += "H";
+//                continue;
+//            case 'R':
+//                codedText += "Z";
+//                continue;
+//            case 'S':
+//                codedText += "G";
+//                continue;
+//            case 'T':
+//                codedText += "I";
+//                continue;
+//            case 'U':
+//                codedText += "F";
+//                continue;
+//            case 'V':
+//                codedText += "L";
+//                continue;
+//            case 'W':
+//                codedText += "N";
+//                continue;
+//            case 'X':
+//                codedText += "W";
+//                continue;
+//            case 'Y':
+//                codedText += "K";
+//                continue;
+//            case 'Z':
+//                codedText += "M";
+//                continue;
+//        }
 
-                
-        
-    }
-    else
-    {
-        codedText += c;
-    }
-}
-Console.WriteLine(codedText);
+
+
+//    }
+//    else
+//    {
+//        codedText += c;
+//    }
+//}
+//Console.WriteLine(codedText);
+
+// Oefening 20.9.1 Bank
+
+using PFOefeningen;
+
+Rekening rekening = new Rekening();
+rekening.RekeningNummer = "BE10234523451234";
+rekening.Saldo = 1000;
+rekening.CreatieDatum = new DateTime(2000, 1, 1);
+Console.WriteLine($"Rekeningnummer: {rekening.RekeningNummer}");
+Console.WriteLine($"Saldo: {rekening.Saldo}");
+Console.WriteLine($"Creatiedatum: {rekening.CreatieDatum.ToLongDateString()}");
+rekening.RekeningNummer = "FR10234523451234";
+rekening.Saldo = 1000;
+rekening.CreatieDatum = new DateTime(1890, 1, 1);
+Console.WriteLine($"Rekeningnummer: {rekening.RekeningNummer}");
+Console.WriteLine($"Saldo: {rekening.Saldo}");
+Console.WriteLine($"Creatiedatum: {rekening.CreatieDatum.ToLongDateString()}");

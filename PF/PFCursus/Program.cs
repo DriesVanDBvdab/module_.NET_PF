@@ -150,3 +150,20 @@
 //TekenLijn();
 //TekenLijn();
 //void TekenLijn() { Console.WriteLine("----------------"); }
+
+//using PFCursus; // (1)
+//Werknemer werknemer1; // (2)
+//werknemer1 = new Werknemer(); // (3)
+//Werknemer werknemer2 = new();
+
+//Werknemer ik;
+//ik = new Werknemer();
+//if (ik is null) // (1)
+//    Console.WriteLine("niet verbonden");
+//else
+//    Console.WriteLine("verbonden");
+
+using PFCursus;
+Werknemer werknemer1 = new Werknemer();
+werknemer1.Naam = "Jef"; 
+Console.WriteLine(werknemer1.Naam);
