@@ -6,14 +6,25 @@ namespace PFCursus
 {
     internal class Werknemer
     {
-        private string naam = string.Empty; // (2)
-        public string Naam // (3)
+        public Werknemer()
         {
-            get // (4)
+            this.Naam = "Onbekend";
+            this.InDienst = DateTime.Today;
+        }
+        public Werknemer(string naam, DateTime inDienst, Geslacht geslacht)
+        {
+            this.Naam = naam;
+            this.InDienst = inDienst;
+            this.Geslacht = geslacht;
+        }
+        private string naam = string.Empty;
+        public string Naam
+        {
+            get 
             {
                 return naam;
             }
-            set // (5)
+            set 
             {
                 if (value != string.Empty)
                     naam = value;

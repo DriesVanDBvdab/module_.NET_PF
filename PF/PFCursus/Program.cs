@@ -261,6 +261,11 @@ using PFCursus;
 //    return getal1 + getal2;
 //}
 
-int resultaat = Som(4, 5); 
-Console.WriteLine(resultaat); 
-int Som(int getal1, int getal2) => getal1 + getal2;
+//int resultaat = Som(4, 5); 
+//Console.WriteLine(resultaat); 
+//int Som(int getal1, int getal2) => getal1 + getal2;
+
+Werknemer ik = new Werknemer("Asterix", new DateTime(2022, 1, 1), Geslacht.Man); 
+ik.Afbeelden();
+Werknemer jij = new Werknemer();
+jij.Afbeelden();
