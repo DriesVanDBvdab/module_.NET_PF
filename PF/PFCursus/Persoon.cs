@@ -6,24 +6,16 @@ namespace PFCursus
 {
     internal class Persoon
     {
-        private int id;
-        public int Id
+        public string Naam { get; set; }
+        public int AantalKinderen { get; set; }
+        public Persoon() { }
+        public Persoon(string naam)
         {
-            get => id;
-            set => id = value;
+            Naam = naam;
         }
-        private string voornaam; 
-        public string Voornaam
+        public Persoon(string naam, int aantalKinderen) : this(naam)
         {
-            get => voornaam;
-            set => voornaam = value;
+            AantalKinderen = aantalKinderen;
         }
-        private string naam; 
-        public string Naam
-        {
-            get => naam;
-            set => naam = value;
-        }
-        public string VolledigeNaam => $"{Voornaam} {Naam}";
     }
 }

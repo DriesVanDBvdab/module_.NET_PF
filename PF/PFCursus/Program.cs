@@ -270,5 +270,13 @@ using PFCursus;
 //Werknemer jij = new Werknemer();
 //jij.Afbeelden();
 
-Werknemer2 ik = new Werknemer2("Asterix", new DateTime(2024, 1, 1), Geslacht.Man);
-ik.Afbeelden();
+//Werknemer2 ik = new Werknemer2("Asterix", new DateTime(2024, 1, 1), Geslacht.Man);
+//ik.Afbeelden();
+
+var eersteMan = new Persoon { Naam = "Adam", AantalKinderen = 2 }; // (1)
+var eersteVrouw = new Persoon("Eva") { AantalKinderen = 2 }; // (2)
+var eersteZoon = new Persoon { Naam = "Kaïn" }; // (3)
+eersteZoon.AantalKinderen = 0;
+var persoon = new { Nr = 1, Naam = "Adam", AantalKinderen = 2 }; // (1)
+Console.WriteLine(persoon.GetType().ToString());
+Console.WriteLine(persoon.Naam);

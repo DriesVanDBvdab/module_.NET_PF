@@ -7,7 +7,8 @@ namespace PFCursus
     internal class Werknemer2(string naam, DateTime inDienst, Geslacht geslacht)
     {
         public Werknemer2() : this("Onbekend", DateTime.Today, Geslacht.Man) { }
-        public string Naam { get; set; } = naam;
+        public string Naam { get; set; } = 
+            !string.IsNullOrWhiteSpace(naam) ? naam : "Onbekend";
         public DateTime InDienst { get; set; } = inDienst;
         public Geslacht Geslacht { get; set; } = geslacht;
         public void Afbeelden()
