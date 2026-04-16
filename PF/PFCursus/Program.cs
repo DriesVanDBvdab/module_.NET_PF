@@ -281,13 +281,20 @@ using PFCursus;
 //Console.WriteLine(persoon.GetType().ToString());
 //Console.WriteLine(persoon.Naam);
 
-using PFCursus;
-Persoon p1 = new Persoon // (1)
-{
-    ID = 1,
-    Naam = "Adam",
-    AantalKinderen = 2
-};
-Persoon p2 = new Persoon { ID = 2, Naam = "Bert", AantalKinderen = 0 };
-//Persoon p3 = new Persoon();
-Persoon p4 = new Persoon(3, "Luc", 2);
+//using PFCursus;
+//Persoon p1 = new Persoon // (1)
+//{
+//    ID = 1,
+//    Naam = "Adam",
+//    AantalKinderen = 2
+//};
+//Persoon p2 = new Persoon { ID = 2, Naam = "Bert", AantalKinderen = 0 };
+////Persoon p3 = new Persoon();
+//Persoon p4 = new Persoon(3, "Luc", 2);
+
+Werknemer ik = new Werknemer("Asterix", DateTime.Today, Geslacht.Man);
+Werknemer jij = new Werknemer("Obelix", DateTime.Today, Geslacht.Man);
+Werknemer.Personeelsfeest = new DateOnly(2023, 12, 12);
+Console.WriteLine(Werknemer.Personeelsfeest);
+ik.Afbeelden();
+jij.Afbeelden();

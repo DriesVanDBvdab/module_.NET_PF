@@ -39,11 +39,14 @@ namespace PFCursus
             get { return geslacht; }
             set { geslacht = value; }
         }
+        private static DateOnly personeelsfeest;
+        public static DateOnly Personeelsfeest { get; set; }
         public void Afbeelden()
         { 
             Console.WriteLine($"Naam: {Naam}"); 
             Console.WriteLine($"Geslacht: {Geslacht}");
-            Console.WriteLine($"In dienst: {InDienst}"); 
+            Console.WriteLine($"In dienst: {InDienst}");
+            Console.WriteLine($"Personeelsfeest: {Personeelsfeest}");
         } 
     }
 }
