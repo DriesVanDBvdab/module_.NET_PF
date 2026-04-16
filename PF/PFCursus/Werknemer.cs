@@ -30,5 +30,11 @@ namespace PFCursus
             get { return geslacht; }
             set { geslacht = value; }
         }
+        public void Afbeelden()
+        { 
+            Console.WriteLine($"Naam: {Naam}"); 
+            Console.WriteLine($"Geslacht: {Geslacht}");
+            Console.WriteLine($"In dienst: {InDienst}"); 
+        } 
     }
 }

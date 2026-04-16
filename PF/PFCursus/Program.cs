@@ -164,6 +164,103 @@
 //    Console.WriteLine("verbonden");
 
 using PFCursus;
-Werknemer werknemer1 = new Werknemer();
-werknemer1.Naam = "Jef"; 
-Console.WriteLine(werknemer1.Naam);
+//Werknemer werknemer1 = new Werknemer();
+//werknemer1.Naam = "Jef"; 
+//Console.WriteLine(werknemer1.Naam);
+
+//Werknemer ik = new Werknemer();
+//ik.Naam = "Asterix";
+//ik.Geslacht = Geslacht.Man;
+//ik.InDienst = new DateTime(2022, 1, 1);
+//ik.Afbeelden();
+
+//Werknemer ik = new Werknemer();
+//ik.Naam = "Asterix";
+//ik.Geslacht = Geslacht.Man;
+//ik.InDienst = new DateTime(2022, 1, 1);
+//Werknemer jij = new Werknemer();
+//jij.Naam = "Obelix";
+//jij.Geslacht = Geslacht.Man;
+//jij.InDienst = new DateTime(2022, 1, 2);
+//LijnenTrekker lijnenTrekker = new LijnenTrekker(); // (1)
+//ik.Afbeelden();
+//lijnenTrekker.TrekLijn(30); // (2)
+//jij.Afbeelden();
+//lijnenTrekker.TrekLijn(79); // (3)
+
+//Werknemer ik = new Werknemer();
+//ik.Naam = "Asterix";
+//ik.Geslacht = Geslacht.Man;
+//ik.InDienst = new DateTime(2022, 1, 1);
+//Werknemer jij = new Werknemer();
+//jij.Naam = "Obelix";
+//jij.Geslacht = Geslacht.Man;
+//jij.InDienst = new DateTime(2022, 1, 2);
+//LijnenTrekker lijnenTrekker = new LijnenTrekker();
+//ik.Afbeelden();
+//lijnenTrekker.TrekLijn(30, '-'); // (1)
+//jij.Afbeelden();
+//lijnenTrekker.TrekLijn(79, '=');
+
+//Omzetter omzetter = new Omzetter(); 
+//Console.Write("Afstand in cm: "); 
+//double cm = double.Parse(Console.ReadLine()); 
+//Console.WriteLine($"{omzetter.CmNaarInch(cm)} inches"); // (1)
+//LijnenTrekker lijnenTrekker = new LijnenTrekker(); 
+//lijnenTrekker.TrekLijn(30, '-'); 
+//Console.Write("Afstand in inches: "); 
+//double inches = double.Parse(Console.ReadLine()); 
+//Console.WriteLine($"{omzetter.InchNaarCm(inches)} cm");
+
+//Werknemer ik = new Werknemer();
+//ik.Naam = "Asterix";
+//ik.Geslacht = Geslacht.Man;
+//ik.InDienst = new DateTime(2022, 1, 1);
+//Werknemer jij = new Werknemer();
+//jij.Naam = "Obelix";
+//jij.Geslacht = Geslacht.Man;
+//jij.InDienst = new DateTime(2022, 1, 2);
+//LijnenTrekker lijnenTrekker = new LijnenTrekker();
+//ik.Afbeelden();
+//lijnenTrekker.TrekLijn(30, '-');
+//jij.Afbeelden();
+//lijnenTrekker.TrekLijn(79, '=');
+//lijnenTrekker.TrekLijn();
+//lijnenTrekker.TrekLijn(10);
+
+//int eerste = 10, tweede = 20;
+//Verwisselaar verwisselaar = new Verwisselaar();
+//verwisselaar.Verwissel(ref eerste, ref tweede);
+//Console.WriteLine(eerste);
+//Console.WriteLine(tweede);
+
+//int eerste = 10, tweede = 20;
+//Verwisselaar verwisselaar = new Verwisselaar();
+//verwisselaar.VerwisselNaarAndereVariabelen(eerste, tweede,
+//out int resultaat1, out int resultaat2);
+//Console.WriteLine(resultaat1);
+//Console.WriteLine(resultaat2);
+
+//int eerste = 10, tweede = 20;
+//int resultaat1, resultaat2;
+//Verwisselaar verwisselaar = new Verwisselaar();
+//verwisselaar.VerwisselNaarAndereVariabelen(eerste, tweede,
+//out resultaat1, out resultaat2);
+//Console.WriteLine(resultaat1);
+//Console.WriteLine(resultaat2);
+
+//Omzetter omzetter = new Omzetter();
+//Console.Write("Afstand in cm: ");
+//if (double.TryParse(Console.ReadLine(), out double cm)) // (1)
+//    Console.WriteLine($"{omzetter.CmNaarInch(cm)} inches");
+//else
+//        Console.WriteLine("Geen correct getal");
+
+//int resultaat = Som(4, 5); Console.WriteLine(resultaat); 
+//int Som(int getal1, int getal2) { // (1)
+//    return getal1 + getal2;
+//}
+
+int resultaat = Som(4, 5); 
+Console.WriteLine(resultaat); 
+int Som(int getal1, int getal2) => getal1 + getal2;
