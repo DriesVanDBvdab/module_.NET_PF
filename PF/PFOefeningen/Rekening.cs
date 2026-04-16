@@ -24,7 +24,7 @@ namespace PFOefeningen
             get { return saldo; }
             set { saldo = value;  }
         }
-        private DateTime creatieDatum = DateTime.Now;
+        readonly DateTime creatieDatum = DateTime.Now;
         public DateTime CreatieDatum
         {
             get { return creatieDatum; }
