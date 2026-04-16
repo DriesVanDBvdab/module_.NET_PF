@@ -6,10 +6,8 @@ namespace PFCursus
 {
     internal class Werknemer
     {
-        public Werknemer()
+        public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
         {
-            this.Naam = "Onbekend";
-            this.InDienst = DateTime.Today;
         }
         public Werknemer(string naam, DateTime inDienst, Geslacht geslacht)
         {
