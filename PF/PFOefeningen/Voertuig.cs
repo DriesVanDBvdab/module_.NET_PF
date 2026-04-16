@@ -6,6 +6,17 @@ namespace PFOefeningen
 {
     internal class Voertuig
     {
+        public Voertuig()
+        {
+        }
+        public Voertuig(string polishouder, decimal kostprijs, int pk, float gemiddeldVerbruik, string nummerplaat)
+        {
+            Polishouder = polishouder;
+            Kostprijs = kostprijs;
+            Pk = pk;
+            GemiddeldVerbruik = gemiddeldVerbruik;
+            Nummerplaat = nummerplaat;
+        }
         private string polishouder = "onbepaald";
         public string Polishouder
         {

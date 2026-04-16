@@ -487,6 +487,11 @@
 //Toyota.Afbeelden();
 
 // Oefening 22.14.1 Bank
+//using PFOefeningen;
+//Rekening rekening = new Rekening("BE10234523451237", 1000, new DateTime(2000, 1, 1));
+//rekening.Afbeelden();
+
+// Oefening 22.14.2 Voertuigen
 using PFOefeningen;
-Rekening rekening = new Rekening("BE10234523451237", 1000, new DateTime(2000, 1, 1));
-rekening.Afbeelden();
+Voertuig Toyota = new Voertuig("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123");
+Toyota.Afbeelden();
