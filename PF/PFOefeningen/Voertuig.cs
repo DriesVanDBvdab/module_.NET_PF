@@ -55,4 +55,12 @@ namespace PFOefeningen
             set {  nummerplaat = value; }
         }
     }
-}
+    public void Afbeelden()
+    {
+        Console.WriteLine($"Polishouder: {polishouder}");
+        Console.WriteLine($"Kostprijs: {kostprijs}");
+        Console.WriteLine($"PK: {pk}");
+        Console.WriteLine($"Gemiddeld verbruik: {gemiddeldVerbruik}");
+        Console.WriteLine($"Nummerplaat: {nummerplaat}");
+        }
+    }

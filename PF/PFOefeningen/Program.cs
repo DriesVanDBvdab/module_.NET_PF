@@ -466,13 +466,22 @@
 //Console.WriteLine();
 
 // Oefening 21.13.1 Bank
+//using PFOefeningen;
+//Rekening rekening = new Rekening();
+//rekening.RekeningNummer = "BE10234523451234";
+//rekening.Saldo = 1000;
+//rekening.CreatieDatum = new DateTime(2000, 1, 1);
+//rekening.Afbeelden();
+//rekening.Afhalen(200);
+//rekening.Afbeelden();
+//rekening.Storten(500);
+//rekening.Afbeelden();
+
+// Oefening 21.13.2 Voertuigen
 using PFOefeningen;
-Rekening rekening = new Rekening();
-rekening.RekeningNummer = "BE10234523451234";
-rekening.Saldo = 1000;
-rekening.CreatieDatum = new DateTime(2000, 1, 1);
-rekening.Afbeelden();
-rekening.Afhalen(200);
-rekening.Afbeelden();
-rekening.Storten(500);
-rekening.Afbeelden();
+Voertuig Toyota = new Voertuig();
+Toyota.Polishouder = "Jan Jansen";
+Toyota.Kostprijs = 12500m;
+Toyota.Pk = 95;
+Toyota.GemiddeldVerbruik = 6.5f;
+Toyota.Afbeelden();
