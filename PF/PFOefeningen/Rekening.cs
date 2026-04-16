@@ -6,6 +6,13 @@ namespace PFOefeningen
 {
     internal class Rekening
     {
+        public Rekening(string rekeningNummer, decimal saldo, DateTime creatieDatum)
+        {
+            RekeningNummer = rekeningNummer;
+            Saldo = saldo;
+            CreatieDatum = creatieDatum;
+        }
+
         readonly DateTime vroegsteDatum = new DateTime(1900, 1, 1);
         private string rekeningNummer = string.Empty;
         public string RekeningNummer
@@ -13,7 +20,12 @@ namespace PFOefeningen
             get { return rekeningNummer; }
             set
             {
-                if (value.Length == 16 && value.StartsWith("BE"))
+                if (value.Length == 16 && 
+                    value.StartsWith("BE") &&
+                    int.TryParse(value.Substring(2,2), out _) &&
+                    long.TryParse(value.Substring(4, 10), out long  rekeningTussenNummer) &&
+                    long.TryParse(value.Substring(14, 2), out long controleNummer) &&
+                    rekeningTussenNummer %97 == controleNummer)
                 {
                     rekeningNummer = value;
                 }

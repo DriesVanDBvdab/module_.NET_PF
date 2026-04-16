@@ -7,15 +7,15 @@ namespace PFOefeningen
     internal class Voertuig
     {
         private string polishouder = "onbepaald";
-        public string Polishouder 
-        { 
-            get { return polishouder; } 
-            set { polishouder = value; } 
+        public string Polishouder
+        {
+            get { return polishouder; }
+            set { polishouder = value; }
         }
         private decimal kostprijs = 0;
         public decimal Kostprijs
         {
-            get { return kostprijs;  }
+            get { return kostprijs; }
             set
             {
                 if (value > 0)
@@ -25,16 +25,16 @@ namespace PFOefeningen
             }
         }
         private int pk = 0;
-        public int Pk 
-        { 
-            get { return pk; } 
+        public int Pk
+        {
+            get { return pk; }
             set
             {
                 if (value > 0)
                 {
                     pk = value;
                 }
-            } 
+            }
         }
         private float gemiddeldVerbruik = 0;
         public float GemiddeldVerbruik
@@ -52,15 +52,16 @@ namespace PFOefeningen
         public string Nummerplaat
         {
             get { return nummerplaat; }
-            set {  nummerplaat = value; }
+            set { nummerplaat = value; }
+        }
+
+        public void Afbeelden()
+        {
+            Console.WriteLine($"Polishouder: {polishouder}");
+            Console.WriteLine($"Kostprijs: {kostprijs}");
+            Console.WriteLine($"PK: {pk}");
+            Console.WriteLine($"Gemiddeld verbruik: {gemiddeldVerbruik}");
+            Console.WriteLine($"Nummerplaat: {nummerplaat}");
         }
     }
-    public void Afbeelden()
-    {
-        Console.WriteLine($"Polishouder: {polishouder}");
-        Console.WriteLine($"Kostprijs: {kostprijs}");
-        Console.WriteLine($"PK: {pk}");
-        Console.WriteLine($"Gemiddeld verbruik: {gemiddeldVerbruik}");
-        Console.WriteLine($"Nummerplaat: {nummerplaat}");
-        }
-    }
+}

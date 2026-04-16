@@ -289,5 +289,5 @@ Persoon p1 = new Persoon // (1)
     AantalKinderen = 2
 };
 Persoon p2 = new Persoon { ID = 2, Naam = "Bert", AantalKinderen = 0 };
-Persoon p3 = new Persoon();
+//Persoon p3 = new Persoon();
 Persoon p4 = new Persoon(3, "Luc", 2);
