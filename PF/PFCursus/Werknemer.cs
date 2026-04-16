@@ -6,9 +6,9 @@ namespace PFCursus
 {
     internal class Werknemer
     {
-        //public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
-        //{
-        //}
+        public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
+        {
+        }
         static Werknemer()
         {
             Personeelsfeest = new DateOnly(DateTime.Today.Year, 2, 1);
@@ -47,12 +47,30 @@ namespace PFCursus
         }
         private static DateOnly personeelsfeest;
         public static DateOnly Personeelsfeest { get; set; }
-        public void Afbeelden()
+        public virtual void Afbeelden()
         { 
             Console.WriteLine($"Naam: {Naam}"); 
             Console.WriteLine($"Geslacht: {Geslacht}");
             Console.WriteLine($"In dienst: {InDienst}");
             Console.WriteLine($"Personeelsfeest: {Personeelsfeest}");
-        } 
+        }
+        public override string ToString()
+        {
+            return $"{Naam} {Geslacht}";
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj is Werknemer)
+            {
+                Werknemer deAndere = (Werknemer)obj;
+                return this.Naam == deAndere.Naam;
+            }
+            else
+                return false;
+        }
+        public override int GetHashCode()
+        {
+            return Naam.GetHashCode();
+        }
     }
 }

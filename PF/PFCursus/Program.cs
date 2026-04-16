@@ -303,6 +303,109 @@ using PFCursus;
 
 //Console.WriteLine(Rekenaar.Kwadraat(3));
 
-var land = "belgië"; // (1)
-Console.WriteLine(land.ToUpperFirst()); // (2)
-Console.WriteLine(land.Right(3));
+//var land = "belgië"; // (1)
+//Console.WriteLine(land.ToUpperFirst()); // (2)
+//Console.WriteLine(land.Right(3));
+
+//Arbeider ik = new Arbeider("Asterix", new DateTime(2022, 1, 1),
+//        Geslacht.Man, 24.79m, 3);
+//ik.Afbeelden();
+
+//Bediende ik = new Bediende("Asterix", new DateTime(2022, 1, 1),
+//    Geslacht.Man, 2400.79m);
+//ik.Afbeelden();
+
+//Manager ik = new Manager("Asterix", new DateTime(2022, 1, 1),
+//    Geslacht.Man, 2400.79m, 7000m);
+//ik.Afbeelden();
+
+//Manager ik = new Manager("Asterix", new DateTime(2022, 1, 1),
+//Geslacht.Man, 2400.79m, 7000m); // (1)
+//Console.WriteLine(ik is Manager); // (2)
+//Console.WriteLine(ik is Bediende); // (3)
+//Console.WriteLine(ik is Werknemer); // (4)
+//Console.WriteLine(ik is Arbeider); // (5)
+//Console.WriteLine(ik is string); // (6)
+//Werknemer jij = new Bediende("Obelix", new DateTime(2022, 1, 2),
+//    Geslacht.Man, 2400.79m); // (7)
+//Console.WriteLine(jij is Bediende); // (8)
+//Console.WriteLine(jij is Werknemer);
+
+//Manager ik = new Manager("Asterix", new DateTime(2022, 1, 1),
+//Geslacht.Man, 2400.79m, 7000m);
+//Console.WriteLine(ik.ToString());
+
+//Manager ik = new Manager("Asterix", new DateTime(2022, 1, 1),
+//Geslacht.Man, 2400.79m, 7000m);
+//Manager mezelf = ik;
+//Manager dezelfde = new Manager("Asterix", new DateTime(2022, 1, 1),
+//Geslacht.Man, 2400.79m, 7000m);
+//Console.WriteLine(ik.Equals(mezelf));
+//Console.WriteLine(ik.Equals(dezelfde));
+
+//Manager ik = new Manager("Asterix", new DateTime(2022, 1, 1),
+//Geslacht.Man, 2400.79m, 7000m);
+//Console.WriteLine(ik.Bonus);
+//Werknemer jij = new Bediende("Obelix", new DateTime(2022, 1, 2),
+//Geslacht.Man, 2400.79m);
+//Console.WriteLine(jij);
+//Manager jijAlsManager = (Manager)jij;
+//Manager hij = new Manager("Abraracourcix", new DateTime(2022, 1, 3),
+//Geslacht.Man, 6666.66m, 10000m);
+//Werknemer hijAlsWerknemer = (Werknemer)hij;
+//Console.WriteLine(hijAlsWerknemer);
+
+//object obj = new Werknemer("Asterix", DateTime.Today, Geslacht.Man);
+//Werknemer deAndere = obj as Werknemer;
+
+//Werknemer ik = new Bediende("Asterix", DateTime.Today,
+//Geslacht.Man, 1500m);
+//Werknemer jij = new Arbeider("Obelix", DateTime.Today,
+//Geslacht.Man, 10m, 1);
+//Bediende hij;
+//hij = (Bediende)ik;
+//hij.Afbeelden();
+////hij = (Bediende)jij;
+////hij.Afbeelden();
+//hij = ik as Bediende;
+//if (hij is not null)
+//    hij.Afbeelden();
+//hij = jij as Bediende;
+//if (hij is not null)
+//    hij.Afbeelden();
+
+Object[] lijst = new Object[]
+{
+new Arbeider("Asterix", new DateTime(2022, 1, 1), Geslacht.Man, 24.79m, 3),
+new Bediende("Obelix", new DateTime(2022, 2, 1), Geslacht.Man, 2400.79m),
+new Bediende("Walhalla", new DateTime(2022,1,1), Geslacht.Vrouw,2000m),
+null,
+"C# 7.0"
+};
+foreach (var item in lijst) 
+    Console.WriteLine(Info(item));
+
+string Info(Object obj)
+{
+    switch (obj)
+    {
+        case Werknemer w when w.Geslacht == Geslacht.Man:
+            return $"{w.Naam} is een mannelijke werknemer ";
+        case Arbeider a when a.Geslacht == Geslacht.Vrouw:
+            return $"{a.Naam} is een vrouwelijke arbeider " +
+        $"met een uurloon van {a.Uurloon} euro";
+        case Arbeider a when a.Geslacht == Geslacht.Man:
+            return $"{a.Naam} is een mannelijke arbeider " +
+        $"met een uurloon van {a.Uurloon} euro";
+        case Bediende b when b.Geslacht == Geslacht.Vrouw:
+            return $"{b.Naam} is een vrouwelijke bediende " +
+        $"met een wedde van {b.Wedde} euro";
+        case Bediende b when b.Geslacht == Geslacht.Man:
+            return $"{b.Naam} is een mannelijke bediende " +
+        $"met een wedde van {b.Wedde} euro";
+        case null: 
+            return $"null";
+        default: 
+            return $"{obj} is geen werknemer";
+    }
+}

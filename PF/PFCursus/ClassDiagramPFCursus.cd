@@ -1,24 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="PFCursus.Werknemer">
-    <Position X="1" Y="0.75" Width="1.5" />
+    <Position X="3.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAABAAAAAABAAAAAQAgAAAAIAAAQAAAAE=</HashCode>
+      <HashCode>AAAAAAAAAAAAABAAAAABBAAAAQQAgAAAAIAAAQAAAAE=</HashCode>
       <FileName>Werknemer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PFCursus.LijnenTrekker">
-    <Position X="2.75" Y="0.75" Width="1.5" />
+    <Position X="1.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>LijnenTrekker.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PFCursus.Omzetter">
-    <Position X="4.5" Y="0.75" Width="1.5" />
+    <Position X="3.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAA=</HashCode>
       <FileName>Omzetter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PFCursus.Arbeider">
+    <Position X="1.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAABgAAAACAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Arbeider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PFCursus.Bediende">
+    <Position X="5.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAIAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bediende.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PFCursus.Manager">
+    <Position X="8" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAACAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Manager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
