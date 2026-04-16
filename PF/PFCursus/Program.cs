@@ -299,4 +299,6 @@ using PFCursus;
 //ik.Afbeelden();
 //jij.Afbeelden();
 
-Console.WriteLine(Werknemer.Personeelsfeest);
+//Console.WriteLine(Werknemer.Personeelsfeest);
+
+Console.WriteLine(Rekenaar.Kwadraat(3));
