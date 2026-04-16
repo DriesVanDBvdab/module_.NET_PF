@@ -12,6 +12,7 @@ namespace PFCursus
         {
             Wedde = wedde;
         }
+
         private decimal wedde;
         public decimal Wedde
         {
@@ -29,6 +30,13 @@ namespace PFCursus
         public override string ToString()
         {
             return $"{base.ToString()} {Wedde} euro/maand";
+        }
+        public override decimal Premie
+        {
+            get
+            {
+                return Wedde * 2m;
+            }
         }
     }
 }

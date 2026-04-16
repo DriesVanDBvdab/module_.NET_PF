@@ -33,6 +33,13 @@ namespace PFCursus
                     ploegenstelsel = value;
             }
         }
+        public override decimal Premie
+        {
+            get
+            {
+                return Uurloon * 150m;
+            }
+        }
 
         public override void Afbeelden()
         {

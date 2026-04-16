@@ -374,38 +374,51 @@ using PFCursus;
 //if (hij is not null)
 //    hij.Afbeelden();
 
-Object[] lijst = new Object[]
-{
-new Arbeider("Asterix", new DateTime(2022, 1, 1), Geslacht.Man, 24.79m, 3),
-new Bediende("Obelix", new DateTime(2022, 2, 1), Geslacht.Man, 2400.79m),
-new Bediende("Walhalla", new DateTime(2022,1,1), Geslacht.Vrouw,2000m),
-null,
-"C# 7.0"
-};
-foreach (var item in lijst) 
-    Console.WriteLine(Info(item));
+//Object[] lijst = new Object[]
+//{
+//new Arbeider("Asterix", new DateTime(2022, 1, 1), Geslacht.Man, 24.79m, 3),
+//new Bediende("Obelix", new DateTime(2022, 2, 1), Geslacht.Man, 2400.79m),
+//new Bediende("Walhalla", new DateTime(2022,1,1), Geslacht.Vrouw,2000m),
+//null,
+//"C# 7.0"
+//};
+//foreach (var item in lijst) 
+//    Console.WriteLine(Info(item));
 
-string Info(Object obj)
-{
-    switch (obj)
-    {
-        case Werknemer w when w.Geslacht == Geslacht.Man:
-            return $"{w.Naam} is een mannelijke werknemer ";
-        case Arbeider a when a.Geslacht == Geslacht.Vrouw:
-            return $"{a.Naam} is een vrouwelijke arbeider " +
-        $"met een uurloon van {a.Uurloon} euro";
-        case Arbeider a when a.Geslacht == Geslacht.Man:
-            return $"{a.Naam} is een mannelijke arbeider " +
-        $"met een uurloon van {a.Uurloon} euro";
-        case Bediende b when b.Geslacht == Geslacht.Vrouw:
-            return $"{b.Naam} is een vrouwelijke bediende " +
-        $"met een wedde van {b.Wedde} euro";
-        case Bediende b when b.Geslacht == Geslacht.Man:
-            return $"{b.Naam} is een mannelijke bediende " +
-        $"met een wedde van {b.Wedde} euro";
-        case null: 
-            return $"null";
-        default: 
-            return $"{obj} is geen werknemer";
-    }
-}
+//string Info(Object obj)
+//{
+//    switch (obj)
+//    {
+//        case Werknemer w when w.Geslacht == Geslacht.Man:
+//            return $"{w.Naam} is een mannelijke werknemer ";
+//        case Arbeider a when a.Geslacht == Geslacht.Vrouw:
+//            return $"{a.Naam} is een vrouwelijke arbeider " +
+//        $"met een uurloon van {a.Uurloon} euro";
+//        case Arbeider a when a.Geslacht == Geslacht.Man:
+//            return $"{a.Naam} is een mannelijke arbeider " +
+//        $"met een uurloon van {a.Uurloon} euro";
+//        case Bediende b when b.Geslacht == Geslacht.Vrouw:
+//            return $"{b.Naam} is een vrouwelijke bediende " +
+//        $"met een wedde van {b.Wedde} euro";
+//        case Bediende b when b.Geslacht == Geslacht.Man:
+//            return $"{b.Naam} is een mannelijke bediende " +
+//        $"met een wedde van {b.Wedde} euro";
+//        case null: 
+//            return $"null";
+//        default: 
+//            return $"{obj} is geen werknemer";
+//    }
+//}
+
+//Manager jij = new Manager("Asterix", new DateTime(2022, 1, 1),
+//   Geslacht.Man, 2400.79m, 7000m);
+
+Arbeider asterix = new Arbeider("Asterix", new DateTime(2022, 1, 1),
+Geslacht.Man, 24.79m, 3);
+Bediende obelix = new Bediende("Obelix", new DateTime(1995, 1, 1),
+Geslacht.Man, 2400.79m);
+Manager idefix = new Manager("Idefix", new DateTime(1996, 1, 1),
+Geslacht.Man, 2400.79m, 7000m);
+Console.WriteLine(asterix.Premie);
+Console.WriteLine(obelix.Premie);
+Console.WriteLine(idefix.Premie);

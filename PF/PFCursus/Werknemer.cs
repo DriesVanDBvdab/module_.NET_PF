@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFCursus
 {
-    internal class Werknemer
+    internal abstract class Werknemer
     {
         public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
         {
@@ -20,6 +20,10 @@ namespace PFCursus
             this.Naam = naam;
             this.InDienst = inDienst;
             this.Geslacht = geslacht;
+        }
+        public abstract decimal Premie
+        {
+            get;
         }
         private string naam = string.Empty;
         public string Naam

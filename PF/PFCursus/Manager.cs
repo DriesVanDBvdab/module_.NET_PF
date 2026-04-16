@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFCursus
 {
-    internal class Manager : Bediende
+    internal sealed class Manager : Bediende
     {
         public Manager(string naam, DateTime indienst, Geslacht geslacht,
         decimal wedde, decimal bonus)
@@ -33,6 +33,13 @@ namespace PFCursus
         public override string ToString()
         {
             return $"{base.ToString()}, Bonus: {Bonus}";
+        }
+        public override decimal Premie
+        {
+            get
+            {
+                return Bonus * 3m;
+            }
         }
     }
 }
