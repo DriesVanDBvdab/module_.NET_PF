@@ -63,7 +63,7 @@ namespace PFOefeningen
                 saldo += bedrag;
             }
         }
-        public  void Afbeelden()
+        public virtual void Afbeelden()
         {
             Console.WriteLine($"Rekeningnummer: {rekeningNummer}");
             Console.WriteLine($"Saldo: {saldo}");

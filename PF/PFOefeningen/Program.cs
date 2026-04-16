@@ -492,6 +492,13 @@
 //rekening.Afbeelden();
 
 // Oefening 22.14.2 Voertuigen
+//using PFOefeningen;
+//Voertuig Toyota = new Voertuig("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123");
+//Toyota.Afbeelden();
+
+// Oefening 24.10.1 Bank
 using PFOefeningen;
-Voertuig Toyota = new Voertuig("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123");
-Toyota.Afbeelden();
+Spaarrekening spaarrekening = new Spaarrekening("BE10234523451234", 1000, new DateTime(2000, 1, 1), 0.05m);
+spaarrekening.Afbeelden();
+Zichtrekening zichtrekening = new Zichtrekening("BE10234523451235", 125, new DateTime(2005, 5, 5), -200);
+zichtrekening.Afbeelden();
