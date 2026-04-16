@@ -497,8 +497,15 @@
 //Toyota.Afbeelden();
 
 // Oefening 24.10.1 Bank
+//using PFOefeningen;
+//Spaarrekening spaarrekening = new Spaarrekening("BE10234523451234", 1000, new DateTime(2000, 1, 1), 0.05m);
+//spaarrekening.Afbeelden();
+//Zichtrekening zichtrekening = new Zichtrekening("BE10234523451235", 125, new DateTime(2005, 5, 5), -200);
+//zichtrekening.Afbeelden();
+
+// Oefening 24.10.2 Voertuigen
 using PFOefeningen;
-Spaarrekening spaarrekening = new Spaarrekening("BE10234523451234", 1000, new DateTime(2000, 1, 1), 0.05m);
-spaarrekening.Afbeelden();
-Zichtrekening zichtrekening = new Zichtrekening("BE10234523451235", 125, new DateTime(2005, 5, 5), -200);
-zichtrekening.Afbeelden();
+Vrachtwagen vrachtwagen = new Vrachtwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 15000f);
+vrachtwagen.Afbeelden();
+Personenwagen personenwagen = new Personenwagen("Els Peeters", 35000m, -12, 0.0f, "2-DEF-456", 4);
+personenwagen.Afbeelden();

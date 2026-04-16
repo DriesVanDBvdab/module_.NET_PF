@@ -66,7 +66,7 @@ namespace PFOefeningen
             set { nummerplaat = value; }
         }
 
-        public void Afbeelden()
+        public virtual void Afbeelden()
         {
             Console.WriteLine($"Polishouder: {polishouder}");
             Console.WriteLine($"Kostprijs: {kostprijs}");
