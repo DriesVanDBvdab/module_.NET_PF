@@ -273,10 +273,21 @@ using PFCursus;
 //Werknemer2 ik = new Werknemer2("Asterix", new DateTime(2024, 1, 1), Geslacht.Man);
 //ik.Afbeelden();
 
-var eersteMan = new Persoon { Naam = "Adam", AantalKinderen = 2 }; // (1)
-var eersteVrouw = new Persoon("Eva") { AantalKinderen = 2 }; // (2)
-var eersteZoon = new Persoon { Naam = "Kaïn" }; // (3)
-eersteZoon.AantalKinderen = 0;
-var persoon = new { Nr = 1, Naam = "Adam", AantalKinderen = 2 }; // (1)
-Console.WriteLine(persoon.GetType().ToString());
-Console.WriteLine(persoon.Naam);
+//var eersteMan = new Persoon { Naam = "Adam", AantalKinderen = 2 }; // (1)
+//var eersteVrouw = new Persoon("Eva") { AantalKinderen = 2 }; // (2)
+//var eersteZoon = new Persoon { Naam = "Kaïn" }; // (3)
+//eersteZoon.AantalKinderen = 0;
+//var persoon = new { Nr = 1, Naam = "Adam", AantalKinderen = 2 }; // (1)
+//Console.WriteLine(persoon.GetType().ToString());
+//Console.WriteLine(persoon.Naam);
+
+using PFCursus;
+Persoon p1 = new Persoon // (1)
+{
+    ID = 1,
+    Naam = "Adam",
+    AantalKinderen = 2
+};
+Persoon p2 = new Persoon { ID = 2, Naam = "Bert", AantalKinderen = 0 };
+Persoon p3 = new Persoon();
+Persoon p4 = new Persoon(3, "Luc", 2);
