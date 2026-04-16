@@ -301,4 +301,8 @@ using PFCursus;
 
 //Console.WriteLine(Werknemer.Personeelsfeest);
 
-Console.WriteLine(Rekenaar.Kwadraat(3));
+//Console.WriteLine(Rekenaar.Kwadraat(3));
+
+var land = "belgië"; // (1)
+Console.WriteLine(land.ToUpperFirst()); // (2)
+Console.WriteLine(land.Right(3));
