@@ -6,6 +6,7 @@ namespace PFOefeningen
 {
     internal class Rekening
     {
+        readonly DateTime vroegsteDatum = new DateTime(1900, 1, 1);
         private string rekeningNummer = string.Empty;
         public string RekeningNummer
         {
@@ -18,23 +19,43 @@ namespace PFOefeningen
                 }
             }
         }
-        private int saldo = 0;
-        public int Saldo
+        private decimal saldo = 0;
+        public decimal Saldo
         {
             get { return saldo; }
             set { saldo = value;  }
         }
-        readonly DateTime creatieDatum = DateTime.Now;
+        DateTime creatieDatum = DateTime.Now;
         public DateTime CreatieDatum
         {
             get { return creatieDatum; }
             set
             {
-                if (value.Year > 1900)
+                if (value > vroegsteDatum)
                 {
                     creatieDatum = value;
                 }
             }
+        }
+        public void Afhalen(decimal bedrag)
+        {
+            if (bedrag > 0)
+            {
+                saldo -= bedrag;
+            }
+        }
+        public void Storten(decimal bedrag)
+        {
+            if (bedrag > 0)
+            {
+                saldo += bedrag;
+            }
+        }
+        public  void Afbeelden()
+        {
+            Console.WriteLine($"Rekeningnummer: {rekeningNummer}");
+            Console.WriteLine($"Saldo: {saldo}");
+            Console.WriteLine($"Creatiedatum: {creatieDatum}");
         }
 
     }
