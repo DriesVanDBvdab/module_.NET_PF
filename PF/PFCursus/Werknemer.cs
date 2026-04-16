@@ -9,6 +9,12 @@ namespace PFCursus
         //public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
         //{
         //}
+        static Werknemer()
+        {
+            Personeelsfeest = new DateOnly(DateTime.Today.Year, 2, 1);
+            while (Personeelsfeest.DayOfWeek != DayOfWeek.Friday)
+                Personeelsfeest = Personeelsfeest.AddDays(1);
+        }
         public Werknemer(string naam, DateTime inDienst, Geslacht geslacht)
         {
             this.Naam = naam;
