@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFOefeningen
 {
-    internal class Voertuig
+    internal abstract class Voertuig
     {
         public Voertuig()
         {
@@ -74,5 +74,6 @@ namespace PFOefeningen
             Console.WriteLine($"Gemiddeld verbruik: {gemiddeldVerbruik}");
             Console.WriteLine($"Nummerplaat: {nummerplaat}");
         }
+        public abstract double GetKyotoScore();
     }
 }

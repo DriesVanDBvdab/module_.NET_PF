@@ -33,5 +33,10 @@ namespace PFOefeningen
             base.Afbeelden();
             Console.WriteLine($"Maximum lading: {MaximumLading} kg");
         }
+
+        public override double GetKyotoScore()
+        {
+            return (Pk * GemiddeldVerbruik) / (MaximumLading / 1000);
+        }
     }
 }

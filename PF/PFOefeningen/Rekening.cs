@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFOefeningen
 {
-    internal class Rekening
+    internal abstract class Rekening
     {
         public Rekening(string rekeningNummer, decimal saldo, DateTime creatieDatum)
         {

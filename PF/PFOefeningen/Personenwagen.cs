@@ -11,7 +11,8 @@ namespace PFOefeningen
         {
             AantalDeuren = aantalDeuren;
         }
-        const int StandaardAantalDeuren = 5;
+        const int StandaardAantalDeuren = 4;
+        const int StandaardAantalPassagiers = 5;
         private int aantalDeuren = StandaardAantalDeuren;
         public int AantalDeuren
         {
@@ -24,10 +25,30 @@ namespace PFOefeningen
                 }
             }
         }
+
+        private int aantalPassagiers = StandaardAantalPassagiers; 
+        public int AantalPassagiers 
+        { 
+            get 
+            { 
+                return aantalPassagiers; 
+            } 
+            set 
+            { 
+                if (value >= 0) 
+                    aantalPassagiers = value; 
+            } 
+        }
+
         public override void Afbeelden()
         {
             base.Afbeelden();
             Console.WriteLine($"Aantal deuren: {AantalDeuren}");
+        }
+
+        public override double GetKyotoScore()
+        {
+            return (Pk * GemiddeldVerbruik) / AantalPassagiers;
         }
     }
 }
