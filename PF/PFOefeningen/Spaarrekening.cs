@@ -6,8 +6,8 @@ namespace PFOefeningen
 {
     internal class Spaarrekening : Rekening
     {
-        public Spaarrekening(string rekeningNummer, decimal saldo, DateTime creatieDatum, decimal intrest)
-            : base(rekeningNummer, saldo, creatieDatum)
+        public Spaarrekening(string rekeningNummer, decimal saldo, DateTime creatieDatum, decimal intrest, Klant eigenaar)
+            : base(rekeningNummer, saldo, creatieDatum, eigenaar)
         {
             Intrest = intrest;
         }

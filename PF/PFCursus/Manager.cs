@@ -7,8 +7,8 @@ namespace PFCursus
     internal sealed class Manager : Bediende
     {
         public Manager(string naam, DateTime indienst, Geslacht geslacht,
-        decimal wedde, decimal bonus)
-        : base(naam, indienst, geslacht, wedde)
+        decimal wedde, decimal bonus, Afdeling afdeling)
+        : base(naam, indienst, geslacht, wedde, afdeling)
         {
             Bonus = bonus;
         }

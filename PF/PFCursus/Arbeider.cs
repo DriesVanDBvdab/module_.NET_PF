@@ -7,8 +7,8 @@ namespace PFCursus
     internal class Arbeider : Werknemer
     {
         public Arbeider(string naam, DateTime inDienst, Geslacht geslacht,
-            decimal uurloon, byte ploegenstelsel)
-            : base(naam, inDienst, geslacht)
+            decimal uurloon, byte ploegenstelsel, Afdeling afdeling)
+            : base(naam, inDienst, geslacht, afdeling)
         {
             Uurloon = uurloon;
             Ploegenstelsel = ploegenstelsel;

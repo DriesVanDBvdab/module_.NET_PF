@@ -6,20 +6,21 @@ namespace PFCursus
 {
     internal abstract class Werknemer
     {
-        public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
-        {
-        }
+        //public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
+        //{
+        //}
         static Werknemer()
         {
             Personeelsfeest = new DateOnly(DateTime.Today.Year, 2, 1);
             while (Personeelsfeest.DayOfWeek != DayOfWeek.Friday)
                 Personeelsfeest = Personeelsfeest.AddDays(1);
         }
-        public Werknemer(string naam, DateTime inDienst, Geslacht geslacht)
+        public Werknemer(string naam, DateTime inDienst, Geslacht geslacht, Afdeling afdeling)
         {
-            this.Naam = naam;
-            this.InDienst = inDienst;
-            this.Geslacht = geslacht;
+            Naam = naam;
+            InDienst = inDienst;
+            Geslacht = geslacht;
+            Afdeling = afdeling;
         }
         public abstract decimal Premie
         {
@@ -51,12 +52,27 @@ namespace PFCursus
         }
         private static DateOnly personeelsfeest;
         public static DateOnly Personeelsfeest { get; set; }
+
+        private Afdeling afdeling;
+        public Afdeling Afdeling
+        {
+            get
+            {
+                return afdeling;
+            }
+            set
+            {
+                afdeling = value;
+            }
+        }
         public virtual void Afbeelden()
         { 
             Console.WriteLine($"Naam: {Naam}"); 
             Console.WriteLine($"Geslacht: {Geslacht}");
             Console.WriteLine($"In dienst: {InDienst}");
             Console.WriteLine($"Personeelsfeest: {Personeelsfeest}");
+            if (Afdeling != null) 
+                Console.WriteLine(Afdeling);
         }
         public override string ToString()
         {

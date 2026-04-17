@@ -6,8 +6,8 @@ namespace PFOefeningen
 {
     internal class Zichtrekening : Rekening
     {
-        public Zichtrekening(string rekeningNummer, decimal saldo, DateTime creatieDatum, decimal maxKrediet)
-            : base(rekeningNummer, saldo, creatieDatum)
+        public Zichtrekening(string rekeningNummer, decimal saldo, DateTime creatieDatum, decimal maxKrediet, Klant eigenaar)
+            : base(rekeningNummer, saldo, creatieDatum, eigenaar)
         {
             MaxKrediet = maxKrediet;
         }

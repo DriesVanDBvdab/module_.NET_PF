@@ -7,8 +7,8 @@ namespace PFCursus
     internal class Bediende : Werknemer
     {
         public Bediende(string naam, DateTime indienst,
-        Geslacht geslacht, decimal wedde)
-        : base(naam, indienst, geslacht)
+        Geslacht geslacht, decimal wedde, Afdeling afdeling)
+        : base(naam, indienst, geslacht, afdeling)
         {
             Wedde = wedde;
         }

@@ -423,12 +423,33 @@ using PFCursus;
 //Console.WriteLine(obelix.Premie);
 //Console.WriteLine(idefix.Premie);
 
-Werknemer[] personeel = new Werknemer[3]; // (1)
-personeel[0] = new Arbeider("Asterix", new DateTime(2022, 1, 1), // (2)
-Geslacht.Man, 24.79m, 3);
-personeel[1] = new Bediende("Obelix", new DateTime(1995, 2, 1), // (3)
-Geslacht.Man, 2400.79m);
-personeel[2] = new Manager("Idefix", new DateTime(1996, 3, 1), // (4)
-Geslacht.Man, 2400.79m, 7000m);
-foreach (Werknemer eenWerknemer in personeel) // (5)
-    eenWerknemer.Afbeelden();
+//Werknemer[] personeel = new Werknemer[3]; // (1)
+//personeel[0] = new Arbeider("Asterix", new DateTime(2022, 1, 1), // (2)
+//Geslacht.Man, 24.79m, 3);
+//personeel[1] = new Bediende("Obelix", new DateTime(1995, 2, 1), // (3)
+//Geslacht.Man, 2400.79m);
+//personeel[2] = new Manager("Idefix", new DateTime(1996, 3, 1), // (4)
+//Geslacht.Man, 2400.79m, 7000m);
+//foreach (Werknemer eenWerknemer in personeel) // (5)
+//    eenWerknemer.Afbeelden();
+
+//Afdeling afdeling1 = new Afdeling("Strijd", 0);
+//Afdeling afdeling2 = new Afdeling("Feest", 1);
+//Werknemer[] personeel = new Werknemer[3];
+//personeel[0] = new Arbeider("Asterix", new DateTime(2022, 1, 1),
+//Geslacht.Man, 24.79m, 3);
+//personeel[0].Afdeling = afdeling1;
+//personeel[1] = new Bediende("Obelix", new DateTime(1995, 2, 1),
+//Geslacht.Man, 2400.79m);
+//personeel[1].Afdeling = afdeling1;
+//personeel[2] = new Manager("Idefix", new DateTime(1996, 3, 1),
+//Geslacht.Man, 2400.79m, 7000m);
+//personeel[2].Afdeling = afdeling2;
+//foreach (Werknemer eenWerknemer in personeel)
+//    eenWerknemer.Afbeelden();
+
+
+Afdeling afdelingStrijd = new Afdeling("Strijd", 0);
+Arbeider asterix = new Arbeider("Asterix", new DateTime(2023, 1, 1),
+Geslacht.Man, 24.79m, 3, afdelingStrijd);
+asterix.Afbeelden();

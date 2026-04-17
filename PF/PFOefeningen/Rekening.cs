@@ -6,11 +6,12 @@ namespace PFOefeningen
 {
     internal abstract class Rekening
     {
-        public Rekening(string rekeningNummer, decimal saldo, DateTime creatieDatum)
+        public Rekening(string rekeningNummer, decimal saldo, DateTime creatieDatum, Klant eigenaar)
         {
             RekeningNummer = rekeningNummer;
             Saldo = saldo;
             CreatieDatum = creatieDatum;
+            Eigenaar = eigenaar;
         }
 
         readonly DateTime vroegsteDatum = new DateTime(1900, 1, 1);
@@ -49,6 +50,12 @@ namespace PFOefeningen
                 }
             }
         }
+        public Klant eigenaar;
+        public Klant Eigenaar 
+        { 
+            get{ return eigenaar; } 
+            set { eigenaar = value; } 
+        }
         public void Afhalen(decimal bedrag)
         {
             if (bedrag > 0)
@@ -68,6 +75,7 @@ namespace PFOefeningen
             Console.WriteLine($"Rekeningnummer: {rekeningNummer}");
             Console.WriteLine($"Saldo: {saldo}");
             Console.WriteLine($"Creatiedatum: {creatieDatum}");
+            eigenaar.Afbeelden();
         }
 
     }
