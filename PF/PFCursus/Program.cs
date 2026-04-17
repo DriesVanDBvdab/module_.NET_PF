@@ -413,12 +413,22 @@ using PFCursus;
 //Manager jij = new Manager("Asterix", new DateTime(2022, 1, 1),
 //   Geslacht.Man, 2400.79m, 7000m);
 
-Arbeider asterix = new Arbeider("Asterix", new DateTime(2022, 1, 1),
+//Arbeider asterix = new Arbeider("Asterix", new DateTime(2022, 1, 1),
+//Geslacht.Man, 24.79m, 3);
+//Bediende obelix = new Bediende("Obelix", new DateTime(1995, 1, 1),
+//Geslacht.Man, 2400.79m);
+//Manager idefix = new Manager("Idefix", new DateTime(1996, 1, 1),
+//Geslacht.Man, 2400.79m, 7000m);
+//Console.WriteLine(asterix.Premie);
+//Console.WriteLine(obelix.Premie);
+//Console.WriteLine(idefix.Premie);
+
+Werknemer[] personeel = new Werknemer[3]; // (1)
+personeel[0] = new Arbeider("Asterix", new DateTime(2022, 1, 1), // (2)
 Geslacht.Man, 24.79m, 3);
-Bediende obelix = new Bediende("Obelix", new DateTime(1995, 1, 1),
+personeel[1] = new Bediende("Obelix", new DateTime(1995, 2, 1), // (3)
 Geslacht.Man, 2400.79m);
-Manager idefix = new Manager("Idefix", new DateTime(1996, 1, 1),
+personeel[2] = new Manager("Idefix", new DateTime(1996, 3, 1), // (4)
 Geslacht.Man, 2400.79m, 7000m);
-Console.WriteLine(asterix.Premie);
-Console.WriteLine(obelix.Premie);
-Console.WriteLine(idefix.Premie);
+foreach (Werknemer eenWerknemer in personeel) // (5)
+    eenWerknemer.Afbeelden();

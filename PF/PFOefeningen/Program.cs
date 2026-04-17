@@ -504,8 +504,28 @@
 //zichtrekening.Afbeelden();
 
 // Oefening 24.10.2 Voertuigen
+//using PFOefeningen;
+//Vrachtwagen vrachtwagen = new Vrachtwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 15000f);
+//vrachtwagen.Afbeelden();
+//Personenwagen personenwagen = new Personenwagen("Els Peeters", 35000m, -12, 0.0f, "2-DEF-456", 4);
+//personenwagen.Afbeelden();
+
+// Oefening 26.2.1 Bank
 using PFOefeningen;
-Vrachtwagen vrachtwagen = new Vrachtwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 15000f);
-vrachtwagen.Afbeelden();
-Personenwagen personenwagen = new Personenwagen("Els Peeters", 35000m, -12, 0.0f, "2-DEF-456", 4);
-personenwagen.Afbeelden();
+Rekening[] rekeningen = new Rekening[2];
+rekeningen[0] = new Spaarrekening(rekeningNummer: "BE10234523451234", saldo: 1000, creatieDatum: new DateTime(2000, 1, 1), intrest: 0.05m);
+rekeningen[1] = new Zichtrekening(rekeningNummer: "BE10234523451235", saldo: 125, creatieDatum: new DateTime(2005, 5, 5), maxKrediet: -200);
+foreach (Rekening rekening in rekeningen)
+{
+    rekening.Afbeelden();
+}
+
+// Oefening 26.2.2 Voertuigen
+Voertuig[] voertuigen = new Voertuig[2];
+voertuigen[0] = new Vrachtwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 15000f);
+voertuigen[1] = new Personenwagen("Els Peeters", 35000m, 112, 0.0f, "2-DEF-456", 4);
+foreach (Voertuig voertuig in voertuigen)
+{
+    voertuig.Afbeelden();
+    Console.WriteLine($"Kyoto score: {voertuig.GetKyotoScore()}");
+}
