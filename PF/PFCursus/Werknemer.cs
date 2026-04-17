@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFCursus
 {
-    internal abstract class Werknemer
+    internal abstract partial class Werknemer
     {
         //public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
         //{
@@ -65,6 +65,7 @@ namespace PFCursus
                 afdeling = value;
             }
         }
+        public WerkRegime Regime { get; set; }
         public virtual void Afbeelden()
         { 
             Console.WriteLine($"Naam: {Naam}"); 

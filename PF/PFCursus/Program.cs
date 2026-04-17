@@ -449,7 +449,15 @@ using PFCursus;
 //    eenWerknemer.Afbeelden();
 
 
+//Afdeling afdelingStrijd = new Afdeling("Strijd", 0);
+//Arbeider asterix = new Arbeider("Asterix", new DateTime(2023, 1, 1),
+//Geslacht.Man, 24.79m, 3, afdelingStrijd);
+//asterix.Afbeelden();
+
 Afdeling afdelingStrijd = new Afdeling("Strijd", 0);
-Arbeider asterix = new Arbeider("Asterix", new DateTime(2023, 1, 1),
+Arbeider ik = new Arbeider("Asterix", DateTime.Today,
 Geslacht.Man, 24.79m, 3, afdelingStrijd);
-asterix.Afbeelden();
+ik.Regime = new Werknemer.WerkRegime(
+Werknemer.WerkRegime.RegimeType.Voltijds);
+Console.WriteLine(ik.Regime);
+Console.WriteLine(ik.Regime.AantalVakantiedagen);
