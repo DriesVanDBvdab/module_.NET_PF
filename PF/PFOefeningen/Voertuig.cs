@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFOefeningen
 {
-    internal abstract class Voertuig
+    internal abstract class Voertuig : IVervuiler, IPrivaat, IMilieu
     {
         public Voertuig()
         {
@@ -75,5 +75,17 @@ namespace PFOefeningen
             Console.WriteLine($"Nummerplaat: {nummerplaat}");
         }
         public abstract double GetKyotoScore();
+
+        public abstract double GeefVervuiling();
+
+        public string GeefPrivateData()
+        {
+            return $"Polishouder: {Polishouder}.\nNummerplaat: {Nummerplaat}.";
+        }
+
+        public string GeefMilieuData()
+        {
+            return $"PK: {Pk}.\nKostprijs: {Kostprijs}.\nGemiddeld verbruik: {GemiddeldVerbruik}";
+        }
     }
 }

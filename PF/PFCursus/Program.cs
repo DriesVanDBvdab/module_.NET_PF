@@ -454,10 +454,46 @@ using PFCursus;
 //Geslacht.Man, 24.79m, 3, afdelingStrijd);
 //asterix.Afbeelden();
 
-Afdeling afdelingStrijd = new Afdeling("Strijd", 0);
-Arbeider ik = new Arbeider("Asterix", DateTime.Today,
-Geslacht.Man, 24.79m, 3, afdelingStrijd);
-ik.Regime = new Werknemer.WerkRegime(
-Werknemer.WerkRegime.RegimeType.Voltijds);
-Console.WriteLine(ik.Regime);
-Console.WriteLine(ik.Regime.AantalVakantiedagen);
+//Afdeling afdelingStrijd = new Afdeling("Strijd", 0);
+//Arbeider ik = new Arbeider("Asterix", DateTime.Today,
+//Geslacht.Man, 24.79m, 3, afdelingStrijd);
+//ik.Regime = new Werknemer.WerkRegime(
+//Werknemer.WerkRegime.RegimeType.Voltijds);
+//Console.WriteLine(ik.Regime);
+//Console.WriteLine(ik.Regime.AantalVakantiedagen);
+
+//using PFCursus;
+//Class1 c1 = new Class1();
+////c1.ToonTekst(); // (1)
+//IVoorbeeld c1MetDefaultImplementatie = new Class1();
+//c1MetDefaultImplementatie.ToonTekst();
+//Class2 c2 = new Class2();
+//c2.ToonTekst();
+
+
+//Afdeling afdeling1 = new Afdeling("Strijd", 0);
+//IKost[] kosten = new IKost[4]; // (1)
+//kosten[0] = new Arbeider("Asterix", new DateTime(2022, 1, 1),
+//Geslacht.Man, 24.79m, 3, afdeling1);
+//kosten[1] = new Bediende("Obelix", new DateTime(2022, 2, 1),
+//Geslacht.Man, 2400.79m, afdeling1);
+
+//kosten[2] = new Manager("Idefix", new DateTime(2022, 3, 1),
+//Geslacht.Man, 2400.79m, 7000m, afdeling1);
+//kosten[3] = new Fotokopiemachine("123", 500, 0.025m);
+//decimal totaleKost = 0m; // (2)
+//foreach (IKost kost in kosten) // (3)
+//{
+//    Console.WriteLine(kost.Menselijk);
+//    Console.WriteLine(kost.BerekenKostprijs());
+//    totaleKost += kost.BerekenKostprijs(); // (4)
+//}
+//Console.WriteLine(totaleKost);
+
+Afdeling afdeling1 = new Afdeling("Strijd", 0);
+Object[] dingen = new Object[3]; // (1)
+dingen[0] = new Arbeider("Asterix", new DateTime(2022, 1, 1), Geslacht.Man, 14.7m, 3, afdeling1);
+dingen[1] = new Fotokopiemachine("Racekyo", 500, 0.025m);
+dingen[2] = "C#";
+foreach (Object ding in dingen) // (2)
+    Console.WriteLine(ding is IKost);

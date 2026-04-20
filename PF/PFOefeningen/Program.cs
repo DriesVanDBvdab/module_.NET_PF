@@ -531,9 +531,47 @@
 //}
 
 // Oefening 27.3 aggregation
+//using PFOefeningen;
+//Klant klant = new Klant("Jan", "Jansen");
+//Spaarrekening spaarrekening = new Spaarrekening("BE10234523451237", 1000, new DateTime(2000, 1, 1), 0.05m, klant);
+//spaarrekening.Afbeelden();
+//Zichtrekening zichtrekening = new Zichtrekening("BE10234523451338", 125, new DateTime(2005, 5, 5), -200, klant);
+//zichtrekening.Afbeelden();
+
+// Oefening 29.6.1 Bank
+//using PFOefeningen;
+//Klant eigenaar = new Klant("Jan", "Jansen");
+//ISpaarmiddel[] spaarmiddelen = new ISpaarmiddel[3];
+//spaarmiddelen[0] = new Zichtrekening("BE10234523451237", 1000, new DateTime(2000, 1, 1), -200, eigenaar);
+//spaarmiddelen[1] = new Spaarrekening("BE10234523451338", 125, new DateTime(2005, 5, 5), 0.05m, eigenaar);
+//spaarmiddelen[2] = new Kasbon(new DateTime(2020, 1, 1), 5000, 5, 0.03m, eigenaar);
+//foreach (ISpaarmiddel spaarmiddel in spaarmiddelen)
+//{
+//    spaarmiddel.Afbeelden();
+//}
+
+// Oefening 29.6.2 Voertuigen
 using PFOefeningen;
-Klant klant = new Klant("Jan", "Jansen");
-Spaarrekening spaarrekening = new Spaarrekening("BE10234523451237", 1000, new DateTime(2000, 1, 1), 0.05m, klant);
-spaarrekening.Afbeelden();
-Zichtrekening zichtrekening = new Zichtrekening("BE10234523451338", 125, new DateTime(2005, 5, 5), -200, klant);
-zichtrekening.Afbeelden();
+IVervuiler[] vervuilers = new IVervuiler[3];
+vervuilers[0] = new Personenwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 4);
+vervuilers[1] = new Vrachtwagen("Els Peeters", 35000m, 112, 10.4f, "2-DEF-456", 15000f);
+vervuilers[2] = new Stookketel() { CONorm = 0.8f };
+foreach (IVervuiler vervuiler in vervuilers)
+{
+    Console.WriteLine($"Vervuiling: {vervuiler.GeefVervuiling()}");
+}
+
+IPrivaat[] privaat = new IPrivaat[2];
+privaat[0] = new Personenwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 4);
+privaat[1] = new Vrachtwagen("Els Peeters", 35000m, 112, 10.4f, "2-DEF-456", 15000f);
+foreach (IPrivaat item in privaat)
+{
+    Console.WriteLine(item.GeefPrivateData());
+}
+IMilieu[] milieu = new IMilieu[2];
+milieu[0] = new Personenwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 4);
+milieu[1] = new Vrachtwagen("Els Peeters", 35000m, 112, 10.4f, "2-DEF-456", 15000f);
+foreach (IMilieu item in milieu)
+{
+    Console.WriteLine(item.GeefMilieuData());
+}

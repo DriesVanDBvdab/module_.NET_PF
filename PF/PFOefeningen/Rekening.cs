@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFOefeningen
 {
-    internal abstract class Rekening
+    internal abstract class Rekening : ISpaarmiddel
     {
         public Rekening(string rekeningNummer, decimal saldo, DateTime creatieDatum, Klant eigenaar)
         {

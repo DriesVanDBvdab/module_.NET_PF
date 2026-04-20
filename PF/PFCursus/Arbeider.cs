@@ -51,5 +51,10 @@ namespace PFCursus
         {
             return $"{base.ToString()} {Uurloon} euro/uur";
         }
+
+        public override decimal BerekenKostprijs()
+        {
+            return Uurloon * 2000m;
+        }
     }
 }

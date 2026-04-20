@@ -38,5 +38,10 @@ namespace PFOefeningen
         {
             return (Pk * GemiddeldVerbruik) / (MaximumLading / 1000);
         }
+
+        public override double GeefVervuiling()
+        {
+            return GetKyotoScore() * 20;
+        }
     }
 }

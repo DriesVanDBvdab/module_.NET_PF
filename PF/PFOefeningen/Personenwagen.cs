@@ -50,5 +50,10 @@ namespace PFOefeningen
         {
             return (Pk * GemiddeldVerbruik) / AantalPassagiers;
         }
+
+        public override double GeefVervuiling()
+        {
+            return GetKyotoScore() * 5;
+        }
     }
 }

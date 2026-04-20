@@ -38,5 +38,9 @@ namespace PFCursus
                 return Wedde * 2m;
             }
         }
+        public override decimal BerekenKostprijs()
+        {
+            return Wedde * 12m;
+        }
     }
 }

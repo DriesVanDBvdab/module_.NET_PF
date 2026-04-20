@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFCursus
 {
-    internal abstract partial class Werknemer
+    internal abstract partial class Werknemer :IKost
     {
         //public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
         //{
@@ -66,6 +66,17 @@ namespace PFCursus
             }
         }
         public WerkRegime Regime { get; set; }
+
+        public bool Menselijk
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        public abstract decimal BerekenKostprijs();
+
         public virtual void Afbeelden()
         { 
             Console.WriteLine($"Naam: {Naam}"); 

@@ -41,5 +41,10 @@ namespace PFCursus
                 return Bonus * 3m;
             }
         }
+
+        public override decimal BerekenKostprijs()
+        {
+            return base.BerekenKostprijs() + Bonus;
+        }
     }
 }
