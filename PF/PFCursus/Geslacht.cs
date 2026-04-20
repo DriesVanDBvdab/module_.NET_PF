@@ -1,4 +1,7 @@
-﻿public enum Geslacht
+﻿namespace Firma.Personeel
 {
-    Man, Vrouw, X
+    public enum Geslacht
+    {
+        Man, Vrouw, X
+    }
 }

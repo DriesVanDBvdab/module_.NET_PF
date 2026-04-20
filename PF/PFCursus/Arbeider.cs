@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PFCursus
+namespace Firma.Personeel
 {
     internal class Arbeider : Werknemer
     {
+        public Arbeider(string naam, DateTime inDienst, Geslacht geslacht,
+            decimal uurloon, byte ploegenstelsel)
+            : base(naam, inDienst, geslacht)
+        {
+            Uurloon = uurloon;
+            Ploegenstelsel = ploegenstelsel;
+        }
         public Arbeider(string naam, DateTime inDienst, Geslacht geslacht,
             decimal uurloon, byte ploegenstelsel, Afdeling afdeling)
             : base(naam, inDienst, geslacht, afdeling)

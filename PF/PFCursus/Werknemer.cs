@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PFCursus
+namespace Firma.Personeel
 {
     internal abstract partial class Werknemer :IKost
     {
@@ -14,6 +14,10 @@ namespace PFCursus
             Personeelsfeest = new DateOnly(DateTime.Today.Year, 2, 1);
             while (Personeelsfeest.DayOfWeek != DayOfWeek.Friday)
                 Personeelsfeest = Personeelsfeest.AddDays(1);
+        }
+
+        public Werknemer(string naam, DateTime inDienst, Geslacht geslacht) : this(naam, inDienst, geslacht, null)
+        {
         }
         public Werknemer(string naam, DateTime inDienst, Geslacht geslacht, Afdeling afdeling)
         {
@@ -104,5 +108,9 @@ namespace PFCursus
         {
             return Naam.GetHashCode();
         }
+    }
+    internal enum Vestiging
+    {
+        Wevelgem, Wondelgem, Haasrode, Antwerpen, Genk
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PFCursus
+namespace Firma.Materiaal
 {
     internal class Fotokopiemachine : IKost
     {

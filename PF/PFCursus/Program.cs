@@ -163,6 +163,7 @@
 //else
 //    Console.WriteLine("verbonden");
 
+using Firma.Personeel;
 using PFCursus;
 //Werknemer werknemer1 = new Werknemer();
 //werknemer1.Naam = "Jef"; 
@@ -490,10 +491,24 @@ using PFCursus;
 //}
 //Console.WriteLine(totaleKost);
 
-Afdeling afdeling1 = new Afdeling("Strijd", 0);
-Object[] dingen = new Object[3]; // (1)
-dingen[0] = new Arbeider("Asterix", new DateTime(2022, 1, 1), Geslacht.Man, 14.7m, 3, afdeling1);
-dingen[1] = new Fotokopiemachine("Racekyo", 500, 0.025m);
-dingen[2] = "C#";
-foreach (Object ding in dingen) // (2)
-    Console.WriteLine(ding is IKost);
+//Afdeling afdeling1 = new Afdeling("Strijd", 0);
+//Object[] dingen = new Object[3]; // (1)
+//dingen[0] = new Arbeider("Asterix", new DateTime(2022, 1, 1), Geslacht.Man, 14.7m, 3, afdeling1);
+//dingen[1] = new Fotokopiemachine("Racekyo", 500, 0.025m);
+//dingen[2] = "C#";
+//foreach (Object ding in dingen) // (2)
+//    Console.WriteLine(ding is IKost);
+
+//Object[] dingen = new Object[3];
+//dingen[0] = new Firma.Personeel.Arbeider("Asterix", new DateTime(2022, 1, 1),Firma.Personeel.Geslacht.Man, 24.79m, 3);
+//dingen[1] = new Firma.Materiaal.Fotokopiemachine("123", 500, 0.025m);
+//dingen[2] = "C#";
+//foreach (Object ding in dingen)
+//    Console.WriteLine(ding is Firma.IKost);
+
+using MateriaalStatus = Firma.Materiaal.Status; // (1)
+using PersoneelStatus = Firma.Personeel.Status; // (2)
+MateriaalStatus statusBoorMachine = MateriaalStatus.Werkend; // (3)
+PersoneelStatus statusChef = PersoneelStatus.HogerKader; // (4)
+Console.WriteLine(statusBoorMachine);
+Console.WriteLine(statusChef);

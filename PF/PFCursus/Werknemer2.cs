@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PFCursus
+namespace Firma.Personeel
 {
     internal class Werknemer2(string naam, DateTime inDienst, Geslacht geslacht)
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PFCursus
+namespace Firma.Personeel
 {
     internal abstract partial class Werknemer
     {
