@@ -551,27 +551,56 @@
 //}
 
 // Oefening 29.6.2 Voertuigen
-using PFOefeningen;
-IVervuiler[] vervuilers = new IVervuiler[3];
-vervuilers[0] = new Personenwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 4);
-vervuilers[1] = new Vrachtwagen("Els Peeters", 35000m, 112, 10.4f, "2-DEF-456", 15000f);
-vervuilers[2] = new Stookketel() { CONorm = 0.8f };
-foreach (IVervuiler vervuiler in vervuilers)
-{
-    Console.WriteLine($"Vervuiling: {vervuiler.GeefVervuiling()}");
-}
+//using PFOefeningen;
+//IVervuiler[] vervuilers = new IVervuiler[3];
+//vervuilers[0] = new Personenwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 4);
+//vervuilers[1] = new Vrachtwagen("Els Peeters", 35000m, 112, 10.4f, "2-DEF-456", 15000f);
+//vervuilers[2] = new Stookketel() { CONorm = 0.8f };
+//foreach (IVervuiler vervuiler in vervuilers)
+//{
+//    Console.WriteLine($"Vervuiling: {vervuiler.GeefVervuiling()}");
+//}
 
-IPrivaat[] privaat = new IPrivaat[2];
-privaat[0] = new Personenwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 4);
-privaat[1] = new Vrachtwagen("Els Peeters", 35000m, 112, 10.4f, "2-DEF-456", 15000f);
-foreach (IPrivaat item in privaat)
+//IPrivaat[] privaat = new IPrivaat[2];
+//privaat[0] = new Personenwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 4);
+//privaat[1] = new Vrachtwagen("Els Peeters", 35000m, 112, 10.4f, "2-DEF-456", 15000f);
+//foreach (IPrivaat item in privaat)
+//{
+//    Console.WriteLine(item.GeefPrivateData());
+//}
+//IMilieu[] milieu = new IMilieu[2];
+//milieu[0] = new Personenwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 4);
+//milieu[1] = new Vrachtwagen("Els Peeters", 35000m, 112, 10.4f, "2-DEF-456", 15000f);
+//foreach (IMilieu item in milieu)
+//{
+//    Console.WriteLine(item.GeefMilieuData());
+//}
+
+// oefening 32.8 Bank
+using PFOefeningen;
+ISpaarmiddel[] spaarmiddelen = new ISpaarmiddel[3];
+try
 {
-    Console.WriteLine(item.GeefPrivateData());
+    //Ongeldig rekeningnummer
+    //spaarmiddelen[0] = new Zichtrekening("BE10234523451637", 1000, new DateTime(2000, 1, 1), -200, new Klant("Jan", "Jansen"));
+    // Max krediet moet negatief zijn
+    //spaarmiddelen[0] = new Zichtrekening("BE10234523451237", 1000, new DateTime(2000, 1, 1), 200, new Klant("Jan", "Jansen"));
+    //spaarmiddelen[1] = new Spaarrekening("BE10234523451338", 125, new DateTime(2005, 5, 5), -0.05m, new Klant("Jan", "Jansen"));
+    spaarmiddelen[2] = new Kasbon(new DateTime(2020, 1, 1), -5000, 5, 0.03m, new Klant("Jan", "Jansen"));
 }
-IMilieu[] milieu = new IMilieu[2];
-milieu[0] = new Personenwagen("Jan Jansen", 12500m, 95, 6.5f, "1-ABC-123", 4);
-milieu[1] = new Vrachtwagen("Els Peeters", 35000m, 112, 10.4f, "2-DEF-456", 15000f);
-foreach (IMilieu item in milieu)
+catch (Zichtrekening.MaxKredietException ex)
 {
-    Console.WriteLine(item.GeefMilieuData());
+    Console.WriteLine(ex.Message);
+}
+catch (IntrestException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+catch (Kasbon.AankoopDatumException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+catch (Kasbon.BedragException ex)
+{
+    Console.WriteLine(ex.Message);
 }

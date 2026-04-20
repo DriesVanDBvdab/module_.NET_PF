@@ -6,6 +6,33 @@ namespace PFOefeningen
 {
     internal class Kasbon : ISpaarmiddel
     {
+        internal class AankoopDatumException : Exception
+        {
+            public DateTime VerkeerdeAankoopDatum { get; set; }
+            public AankoopDatumException(string message, DateTime verkeerdeAankoopDatum)
+                : base(message)
+            {
+                VerkeerdeAankoopDatum = verkeerdeAankoopDatum;
+            }
+        }
+        internal class LooptijdException : Exception
+        {
+            public int VerkeerdeLooptijd { get; set; }
+            public LooptijdException(string message, int verkeerdeLooptijd)
+                : base(message)
+            {
+                VerkeerdeLooptijd = verkeerdeLooptijd;
+            }
+        }
+        internal class BedragException : Exception
+        {
+            public decimal VerkeerdBedrag { get; set; }
+            public BedragException(string message, decimal verkeerdBedrag)
+                : base(message)
+            {
+                VerkeerdBedrag = verkeerdBedrag;
+            }
+        }
         public Kasbon(DateTime aankoopDatum, decimal bedrag, int looptijd, decimal intest, Klant eigenaar)
         {
             AankoopDatum = aankoopDatum;
@@ -20,7 +47,9 @@ namespace PFOefeningen
             get { return aankoopDatum; }
             set { 
                 if(value > new DateTime(1900, 1, 1))
-                    aankoopDatum = value; 
+                    aankoopDatum = value;
+                else
+                    throw new AankoopDatumException("Aankoopdatum moet na 1/1/1900 zijn!", value);
             }
         }
         private decimal bedrag;
@@ -30,6 +59,8 @@ namespace PFOefeningen
             set {
                 if (value > 0)
                     bedrag = value;
+                else
+                    throw new BedragException("Bedrag moet positief zijn!", value);
             }
         }
         private int looptijd;
@@ -39,6 +70,8 @@ namespace PFOefeningen
             set {
                 if (value > 0)
                     looptijd = value;
+                else
+                    throw new LooptijdException("Looptijd moet positief zijn!", value);
             }
         }
         private decimal intest;
@@ -48,6 +81,8 @@ namespace PFOefeningen
             set {
                 if (value > 0)
                     intest = value;
+                else
+                    throw new IntrestException("Intrest moet positief zijn!", value);
             }
         }
         public Klant Eigenaar { get; set; }

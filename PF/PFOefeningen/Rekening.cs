@@ -6,6 +6,15 @@ namespace PFOefeningen
 {
     internal abstract class Rekening : ISpaarmiddel
     {
+        internal class RekeningNummerException : Exception
+        {
+            public string VerkeerdRekeningNummer { get; set; }
+            public RekeningNummerException(string message, string verkeerdRekeningNummer)
+                : base(message)
+            {
+                VerkeerdRekeningNummer = verkeerdRekeningNummer;
+            }
+        }
         public Rekening(string rekeningNummer, decimal saldo, DateTime creatieDatum, Klant eigenaar)
         {
             RekeningNummer = rekeningNummer;
@@ -21,14 +30,18 @@ namespace PFOefeningen
             get { return rekeningNummer; }
             set
             {
-                if (value.Length == 16 && 
+                if (value.Length == 16 &&
                     value.StartsWith("BE") &&
-                    int.TryParse(value.Substring(2,2), out _) &&
-                    long.TryParse(value.Substring(4, 10), out long  rekeningTussenNummer) &&
+                    int.TryParse(value.Substring(2, 2), out _) &&
+                    long.TryParse(value.Substring(4, 10), out long rekeningTussenNummer) &&
                     long.TryParse(value.Substring(14, 2), out long controleNummer) &&
-                    rekeningTussenNummer %97 == controleNummer)
+                    rekeningTussenNummer % 97 == controleNummer)
                 {
                     rekeningNummer = value;
+                }
+                else
+                {
+                    throw new RekeningNummerException("Ongeldig rekeningnummer!", value);
                 }
             }
         }

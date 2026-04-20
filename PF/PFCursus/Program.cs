@@ -163,8 +163,8 @@
 //else
 //    Console.WriteLine("verbonden");
 
-using Firma.Personeel;
-using PFCursus;
+//using Firma.Personeel;
+//using PFCursus;
 //Werknemer werknemer1 = new Werknemer();
 //werknemer1.Naam = "Jef"; 
 //Console.WriteLine(werknemer1.Naam);
@@ -506,9 +506,158 @@ using PFCursus;
 //foreach (Object ding in dingen)
 //    Console.WriteLine(ding is Firma.IKost);
 
-using MateriaalStatus = Firma.Materiaal.Status; // (1)
-using PersoneelStatus = Firma.Personeel.Status; // (2)
-MateriaalStatus statusBoorMachine = MateriaalStatus.Werkend; // (3)
-PersoneelStatus statusChef = PersoneelStatus.HogerKader; // (4)
-Console.WriteLine(statusBoorMachine);
-Console.WriteLine(statusChef);
+//using MateriaalStatus = Firma.Materiaal.Status; // (1)
+//using PersoneelStatus = Firma.Personeel.Status; // (2)
+//MateriaalStatus statusBoorMachine = MateriaalStatus.Werkend; // (3)
+//PersoneelStatus statusChef = PersoneelStatus.HogerKader; // (4)
+//Console.WriteLine(statusBoorMachine);
+//Console.WriteLine(statusChef);
+
+//decimal getal1, getal2;
+//try
+//{
+//    Console.Write("eerste getal :");
+//    getal1 = decimal.Parse(Console.ReadLine());
+//    Console.Write("tweede getal :");
+//    getal2 = decimal.Parse(Console.ReadLine());
+//    Console.WriteLine("deling: " + getal1 / getal2);
+//}
+//catch (FormatException) // (1)
+//{
+//    Console.WriteLine("Je tikt geen getal");
+//}
+//catch (DivideByZeroException) // (2)
+//{
+//    Console.WriteLine("Delen door nul niet toegelaten");
+//}
+//catch (Exception) // (3)
+//{
+//    Console.WriteLine("Een fout heeft zich voorgedaan");
+//}
+
+//decimal getal1, getal2;
+//try // (1)
+//{
+//    Console.Write("eerste getal: ");
+//    getal1 = decimal.Parse(Console.ReadLine());
+//    try // (2)
+//    {
+//        Console.Write("tweede getal: ");
+//        getal2 = decimal.Parse(Console.ReadLine());
+//        if (getal2 != 0m)
+//            Console.WriteLine("deling: " + getal1 / getal2);
+//        else
+//            Console.WriteLine("Delen door nul niet toegelaten");
+//    }
+//    catch (FormatException) // (3)
+//    {
+//        Console.WriteLine("Je tikt geen getal als tweede getal");
+//    }
+//}
+//catch (FormatException) // (4)
+//{
+//    Console.WriteLine("Je tikt geen getal als eerste getal");
+//}
+
+//using Firma.Personeel;
+//try
+//{
+//    Arbeider jos = new Arbeider(
+//    "Jos", new DateTime(2002, 10, 1),
+//    Geslacht.Man, -10, 3);
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine("Creatie arbeider mislukt");
+//    Console.WriteLine(ex.StackTrace);
+//}
+
+//using Firma.Personeel;
+
+//try
+//{
+//    Arbeider jos = new Arbeider("Jos", new DateTime(2002, 10, 1),
+//    Geslacht.Man, -10, 3);
+//    Console.WriteLine("Object arbeider succesvol aangemaakt");
+//}
+//catch (Arbeider.UurloonException ex)
+//{
+//    Console.WriteLine($"Fout: {ex.Message}: {ex.VerkeerdUurloon}");
+//}
+//catch (Arbeider.PloegenstelselException ex)
+//{
+//    Console.WriteLine($"Fout: {ex.Message}: {ex.VerkeerdPloegenstelsel}");
+//}
+//Console.WriteLine("Einde programma");
+
+//try // (1)
+//{
+//    StreamWriter sw = new StreamWriter(@"C:\Users\Gebruiker\Documents\vdab\cursus\c#_basis\module_.NET_PF\PF\getallen.txt");
+//    Console.Write("Tik een getal: ");
+//    int getal;
+//    while ((getal = int.Parse(Console.ReadLine())) != -1)
+//    {
+//        sw.WriteLine(getal);
+//        Console.Write("Tik een getal: ");
+//    }
+//    sw.Close();
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine(ex.Message);
+//}
+
+//StreamWriter sw = null;
+//try
+//{
+//    sw = new StreamWriter(@"C:\Users\Gebruiker\Documents\vdab\cursus\c#_basis\module_.NET_PF\PF\getallen.txt");
+//    Console.Write("Tik een getal: ");
+//    int getal;
+//    while ((getal = int.Parse(Console.ReadLine())) != -1)
+//    {
+//        sw.WriteLine(getal);
+//        Console.Write("Tik een getal: ");
+//    }
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine(ex.Message);
+//}
+//finally
+//{
+//    sw.Close(); // (2)
+//}
+
+//try
+//{
+//    using (StreamWriter sw = new StreamWriter(@"C:\Users\Gebruiker\Documents\vdab\cursus\c#_basis\module_.NET_PF\PF\getallen.txt"))
+//    {
+//        Console.Write("Tik een getal: ");
+//        int getal;
+//        while ((getal = int.Parse(Console.ReadLine())) != -1)
+//        {
+//            sw.WriteLine(getal);
+//            Console.Write("Tik een getal: ");
+//        }
+//    }
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine(ex.Message);
+//}
+
+try
+{
+    using StreamWriter sw = new StreamWriter(@"C:\Users\Gebruiker\Documents\vdab\cursus\c#_basis\module_.NET_PF\PF\getallen.txt"); // (1)
+    Console.Write("Tik een getal: ");
+    int getal;
+    while ((getal = int.Parse(Console.ReadLine())) != -1)
+    {
+        sw.WriteLine(getal);
+        Console.Write("Tik een getal: ");
+    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}

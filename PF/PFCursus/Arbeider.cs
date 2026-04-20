@@ -6,6 +6,26 @@ namespace Firma.Personeel
 {
     internal class Arbeider : Werknemer
     {
+        internal class UurloonException : Exception // (1)
+        {
+            public decimal VerkeerdUurloon { get; set; } // (2)
+            public UurloonException(string message,
+            decimal verkeerdUurloon) // (3)
+            : base(message) // (4)
+            {
+                VerkeerdUurloon = verkeerdUurloon;
+            }
+        }
+        internal class PloegenstelselException : Exception
+        {
+            public byte VerkeerdPloegenstelsel { get; set; }
+            public PloegenstelselException(string message,
+            byte verkeerdPloegenstelsel)
+            : base(message)
+            {
+                VerkeerdPloegenstelsel = verkeerdPloegenstelsel;
+            }
+        }
         public Arbeider(string naam, DateTime inDienst, Geslacht geslacht,
             decimal uurloon, byte ploegenstelsel)
             : base(naam, inDienst, geslacht)
@@ -26,8 +46,9 @@ namespace Firma.Personeel
             get { return uurloon; }
             set
             {
-                if (value >= 0m)
-                    uurloon = value;
+                if (value <= 0)
+                    throw new UurloonException("Uurloon<=0!", value); // (5)
+                uurloon = value;
             }
         }
         private byte ploegenstelsel;
@@ -37,7 +58,8 @@ namespace Firma.Personeel
             set
             {
                 if (value >= 1 && value <= 3)
-                    ploegenstelsel = value;
+                    throw new PloegenstelselException("Verkeerd ploegenstelsel", value); // (6)
+                ploegenstelsel = value;
             }
         }
         public override decimal Premie

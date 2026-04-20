@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace PFOefeningen
 {
     internal class Spaarrekening : Rekening
     {
+        
         public Spaarrekening(string rekeningNummer, decimal saldo, DateTime creatieDatum, decimal intrest, Klant eigenaar)
             : base(rekeningNummer, saldo, creatieDatum, eigenaar)
         {
@@ -23,6 +25,8 @@ namespace PFOefeningen
             {
                 if (value >= 0)
                     intrest = value;
+                else
+                    throw new IntrestException("Intrest moet positief zijn!", value);
             }
         }
         public override void Afbeelden()

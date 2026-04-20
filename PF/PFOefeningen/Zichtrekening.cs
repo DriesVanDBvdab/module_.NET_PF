@@ -6,6 +6,15 @@ namespace PFOefeningen
 {
     internal class Zichtrekening : Rekening
     {
+        internal class MaxKredietException : Exception
+        {
+            public decimal VerkeerdMaxKrediet { get; set; }
+            public MaxKredietException(string message, decimal verkeerdMaxKrediet)
+                : base(message)
+            {
+                VerkeerdMaxKrediet = verkeerdMaxKrediet;
+            }
+        }
         public Zichtrekening(string rekeningNummer, decimal saldo, DateTime creatieDatum, decimal maxKrediet, Klant eigenaar)
             : base(rekeningNummer, saldo, creatieDatum, eigenaar)
         {
@@ -22,6 +31,8 @@ namespace PFOefeningen
             {
                 if (value < 0)
                     maxKrediet = value;
+                else
+                    throw new MaxKredietException("Max krediet moet negatief zijn!", value);
             }
         }
 
