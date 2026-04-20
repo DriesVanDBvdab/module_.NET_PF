@@ -646,18 +646,50 @@
 //    Console.WriteLine(ex.Message);
 //}
 
-try
-{
-    using StreamWriter sw = new StreamWriter(@"C:\Users\Gebruiker\Documents\vdab\cursus\c#_basis\module_.NET_PF\PF\getallen.txt"); // (1)
-    Console.Write("Tik een getal: ");
-    int getal;
-    while ((getal = int.Parse(Console.ReadLine())) != -1)
-    {
-        sw.WriteLine(getal);
-        Console.Write("Tik een getal: ");
-    }
-}
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-}
+//try
+//{
+//    using StreamWriter sw = new StreamWriter(@"C:\Users\Gebruiker\Documents\vdab\cursus\c#_basis\module_.NET_PF\PF\getallen.txt"); // (1)
+//    Console.Write("Tik een getal: ");
+//    int getal;
+//    while ((getal = int.Parse(Console.ReadLine())) != -1)
+//    {
+//        sw.WriteLine(getal);
+//        Console.Write("Tik een getal: ");
+//    }
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine(ex.Message);
+//}
+
+
+//Coordinaten[] coordinaten = new Coordinaten[3]; // (1)
+//coordinaten[0].x = 0; // (2)
+//coordinaten[0].y = 0;
+//coordinaten[1].x = 50;
+//coordinaten[1].y = coordinaten[0].y; // (3)
+//coordinaten[2] = coordinaten[0]; // (4)
+//foreach (var c in coordinaten)
+//    Console.WriteLine("x:" + c.x + " y:" + c.y);
+
+//using PFCursus;
+//Consulent heidi = new Consulent { Voornaam = "Heidi", Centrum = "Wevelgem", Cursistengroepen = new[] { "PHP", ".NET", "Java" } };
+//Instructeur jan = new Instructeur { Voornaam = "Jan", Centrum = "Wevelgem", Specialiteit = "PHP", };
+
+using PFCursus;
+//var ik = new Instructeur { Voornaam = "Steven", Centrum = "Wevelgem", Specialiteit = ".NET" };
+//var hans = ik with
+//{
+//    Voornaam = "Hans",
+//    Specialiteit = "Java"
+//};
+
+//Console.WriteLine(ik);
+//Console.WriteLine(hans);
+
+//var eenandere = new Instructeur { Voornaam = "Hans", Centrum = "Wevelgem", Specialiteit = "Java" };
+//Console.WriteLine(hans.Equals(eenandere));
+
+//internal record Personeelslid(string Voornaam, string Centrum);
+//internal record Instructeur(string Voornaam, string Centrum, string Specialiteit) : Personeelslid(Voornaam, Centrum);
+//var ik = new Instructeur("Steven", "Wevelgem", ".NET");
