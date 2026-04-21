@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Firma.Personeel
 {
-    internal abstract partial class Werknemer :IKost
+    internal abstract partial class Werknemer :IKost, IComparable
     {
         //public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
         //{
@@ -107,6 +107,15 @@ namespace Firma.Personeel
         public override int GetHashCode()
         {
             return Naam.GetHashCode();
+        }
+        public int CompareTo(object? obj)
+        {
+            if (obj == null) return 1;
+            Werknemer otherWerknemer = obj as Werknemer;
+            if (otherWerknemer != null)
+                return this.Naam.CompareTo(otherWerknemer.Naam);
+            else
+                throw new ArgumentException("Other is geen werknemer");
         }
     }
     internal enum Vestiging

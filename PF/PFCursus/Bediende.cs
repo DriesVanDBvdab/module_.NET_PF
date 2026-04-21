@@ -6,6 +6,11 @@ namespace Firma.Personeel
 {
     internal class Bediende : Werknemer
     {
+        public Bediende(string naam, DateTime indienst, Geslacht geslacht, decimal wedde)
+        : base(naam, indienst, geslacht)
+        {
+            Wedde = wedde;
+        }
         public Bediende(string naam, DateTime indienst,
         Geslacht geslacht, decimal wedde, Afdeling afdeling)
         : base(naam, indienst, geslacht, afdeling)

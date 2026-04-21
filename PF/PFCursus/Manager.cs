@@ -6,6 +6,10 @@ namespace Firma.Personeel
 {
     internal sealed class Manager : Bediende
     {
+        public Manager(string naam, DateTime indienst, Geslacht geslacht, decimal wedde, decimal bonus) : base(naam, indienst, geslacht, wedde)
+        {
+            Bonus = bonus;
+        }
         public Manager(string naam, DateTime indienst, Geslacht geslacht,
         decimal wedde, decimal bonus, Afdeling afdeling)
         : base(naam, indienst, geslacht, wedde, afdeling)

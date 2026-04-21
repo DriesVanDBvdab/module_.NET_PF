@@ -676,7 +676,9 @@
 //Consulent heidi = new Consulent { Voornaam = "Heidi", Centrum = "Wevelgem", Cursistengroepen = new[] { "PHP", ".NET", "Java" } };
 //Instructeur jan = new Instructeur { Voornaam = "Jan", Centrum = "Wevelgem", Specialiteit = "PHP", };
 
+using Firma.Personeel;
 using PFCursus;
+using System.Collections;
 //var ik = new Instructeur { Voornaam = "Steven", Centrum = "Wevelgem", Specialiteit = ".NET" };
 //var hans = ik with
 //{
@@ -693,3 +695,64 @@ using PFCursus;
 //internal record Personeelslid(string Voornaam, string Centrum);
 //internal record Instructeur(string Voornaam, string Centrum, string Specialiteit) : Personeelslid(Voornaam, Centrum);
 //var ik = new Instructeur("Steven", "Wevelgem", ".NET");
+
+//using Firma.Personeel;
+//using System.Collections;
+//Arbeider asterix = new Arbeider("Asterix",
+//new DateTime(2022, 1, 1), Geslacht.Man, 24.79m, 3);
+//Bediende obelix = new Bediende("Obelix",
+//new DateTime(2022, 1, 1), Geslacht.Man, 2400.79m);
+//Manager idefix = new Manager("Idefix",
+//new DateTime(2022, 1, 1), Geslacht.Man, 2400.79m, 7000m);
+//List<Werknemer> personeel = new List<Werknemer>();
+//personeel.Add(asterix);
+//personeel.Add(obelix);
+//personeel.Insert(1, idefix);
+//Console.WriteLine($"{((Werknemer)personeel[0]).Naam}" +
+//$" is de 1ste van {personeel.Count} personeelsleden.");
+//foreach (Werknemer personeelslid in personeel) 
+//    Console.WriteLine(personeelslid.Naam);
+//Afdeling eenAfdeling = new Afdeling("Verzending", 0);
+//personeel.Add(eenAfdeling);
+//foreach (Werknemer personeelslid in personeel)
+//    Console.WriteLine(personeelslid.Naam);
+
+//var getallen = new ArrayList { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }; // (1)
+//var maanden = new List<string>{"januari", "februari","maart","april", // (2)
+//                       "mei","juni","juli","augustus","september","oktober","november","december"};
+//var personen = new List<Persoon>
+//{
+//new Persoon { ID=1, Naam="Adam", AantalKinderen=2 }, new Persoon { ID=2, Naam="Eva", AantalKinderen=2 }
+//};
+
+//ArrayList getallen = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; // (1)
+//List<string> maanden = ["januari", "februari","maart","april", // (1)
+//                  "mei","juni","juli","augustus","september","oktober","november","december"];
+//List<Persoon> personen = [new Persoon { ID=1, Naam="Adam", AantalKinderen=2 }, new Persoon { ID=2, Naam="Eva", AantalKinderen=2 }];
+
+//ArrayList getallen1 = [2, 3, 4]; // (1)
+//ArrayList getallen2 = [6, 7, 8, 9]; // (2)
+//ArrayList alleGetallen = [0, 1, .. getallen1, 5, .. getallen2]; // (3)
+//foreach (int i in alleGetallen) Console.WriteLine(i);
+
+//Dictionary<int, string> opleidingen = new Dictionary<int, string>() { { 1, "Word" }, { 2, "Excel" }, { 3, "Access" } };
+//Dictionary<string, string> extensies = new Dictionary<string, string> { { "txt", "Notepad" }, { "docx", "Word" }, { "xlsx", "Excel" } };
+
+//Dictionary<int, string> opleidingen = new Dictionary<int, string>() { [1] = "Word", [2] = "Excel", [3] = "Access" };
+//Dictionary<string, string> extensies = new Dictionary<string, string> { ["txt"] = "Notepad", ["docx"] = "Word", ["xlsx"] = "Excel" };
+
+//Console.WriteLine(opleidingen[2]); // -> Excel
+//Console.WriteLine(extensies["docx"]); // -> Word
+//Console.WriteLine(extensies["xxx"]);
+
+//if (opleidingen.TryGetValue(2, out string opleiding)) 
+//    Console.WriteLine($"opleiding {opleiding} gevonden");
+//else 
+//    Console.WriteLine("opleiding niet gevonden");
+
+//foreach (int key in opleidingen.Keys) { Console.WriteLine(key); }
+//foreach (string value in opleidingen.Values) { Console.WriteLine(value); }
+
+List<Werknemer> werknemers = new List<Werknemer>(); Console.WriteLine($"Aantal werknemers: {werknemers.Count}"); // (1)
+werknemers = null; //NullReferenceException //Console.WriteLine($"Aantal werknemers: {werknemers.Count}"); // (2)
+Console.WriteLine($"Aantal werknemers: {werknemers?.Count ?? 0}");

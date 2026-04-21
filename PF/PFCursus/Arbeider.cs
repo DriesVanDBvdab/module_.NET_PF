@@ -58,8 +58,9 @@ namespace Firma.Personeel
             set
             {
                 if (value >= 1 && value <= 3)
-                    throw new PloegenstelselException("Verkeerd ploegenstelsel", value); // (6)
-                ploegenstelsel = value;
+                    ploegenstelsel = value;
+                else
+                    throw new PloegenstelselException("Verkeerd ploegenstelsel", value);
             }
         }
         public override decimal Premie
